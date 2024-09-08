@@ -1,5 +1,6 @@
-﻿namespace AdmissionsCommittee.PresentationLayer {
-    // Does QueryInvoker need interface?
+﻿using AdmissionsCommittee.PresentationLayer.Commands;
+
+namespace AdmissionsCommittee.PresentationLayer {
     class QueryInvoker {
         private readonly List<Command> _commands = new List<Command>();
 
@@ -15,9 +16,8 @@
             return _commands.Count;
         }
         
-        // Draw menu or get it as a string?
         public void DrawQueriesMenu() { 
-            Console.WriteLine("Queries: ");
+            Console.WriteLine("Queries menu: ");
             for (int i = 0; i < _commands.Count; i++) {
                 Console.WriteLine($"{i + 1}. {_commands[i].CommandName}");
             }

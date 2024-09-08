@@ -1,4 +1,5 @@
 ﻿using AdmissionsCommittee.DataAccessLayer;
+using AdmissionsCommittee.DataAccessLayer.Entities;
 
 namespace AdmissionsCommittee.ApplicationLayer {
     abstract class QueryHandler {
@@ -8,7 +9,12 @@ namespace AdmissionsCommittee.ApplicationLayer {
             _applicantsDB = applicantsDB;
         }
 
-        public abstract IEnumerable<Applicant> getAllApplicants();
-        public abstract IEnumerable<Applicant> getAllApplicantsOrderByAgeAsc();
+        public abstract IEnumerable<Applicant> GetAllApplicants();
+        public abstract IEnumerable<Application> GetAllApplications();
+        public abstract IEnumerable<ExamResult> GetAllExamResults();
+        public abstract IEnumerable<Faculty> GetAllFaculties();
+        public abstract IEnumerable<PassMark> GetAllPassMarks();
+        public abstract IEnumerable<Speciality> GetAllSpecialities();
+        public abstract IEnumerable<Subject> GetAllSubjects();
     }
 }
