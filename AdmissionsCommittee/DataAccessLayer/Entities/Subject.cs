@@ -1,4 +1,4 @@
-﻿namespace AdmissionsCommittee.DataAccessLayer {
+﻿namespace AdmissionsCommittee.DataAccessLayer.Entities {
     class Subject {
         public int Id { get; }
         public string Name { get; }

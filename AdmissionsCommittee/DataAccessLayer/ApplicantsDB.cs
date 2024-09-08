@@ -1,4 +1,6 @@
-﻿namespace AdmissionsCommittee.DataAccessLayer {
+﻿using AdmissionsCommittee.DataAccessLayer.Entities;
+
+namespace AdmissionsCommittee.DataAccessLayer {
     abstract class ApplicantsDB {
         public readonly List<Applicant> _applicants = new List<Applicant>();
         public readonly List<Application> _applications = new List<Application>();

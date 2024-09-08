@@ -1,6 +1,6 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
 
-namespace AdmissionsCommittee.PresentationLayer {
+namespace AdmissionsCommittee.PresentationLayer.Commands {
     abstract class Command {
         public string CommandName { get; }
         protected readonly QueryHandler _queryHandler;
