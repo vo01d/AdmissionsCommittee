@@ -4,59 +4,64 @@ namespace AdmissionsCommittee.DataAccessLayer {
     class HardCodedApplicantsDB : ApplicantsDB {
         public HardCodedApplicantsDB() {
             _applicants.AddRange(new List<Applicant> {
-                new Applicant(1, "Ivanov", "Ivan", "Ivanovich", new DateOnly(1990, 5, 15), "+380671234567"),
-                new Applicant(2, "Petrov", "Petr", "Petrovich", new DateOnly(1992, 8, 23), "+380671234568"),
-                new Applicant(3, "Sidorov", "Ivan", "Sidorovich", new DateOnly(1991, 10, 5), "+380671234569"),
-                new Applicant(4, "Koval", "Mykola", "Orestovych", new DateOnly(1993, 11, 30), "+380671234570"),
-                new Applicant(5, "Shevchenko", "Taras", "Hryhorovych", new DateOnly(1985, 3, 9), "+380671234571")
+                new Applicant(id: 1, lastName: "Ivanov", firstName: "Ivan", middleName: "Ivanovich", birthday: new DateOnly(1990, 5, 15), 
+                    phoneNumber: "+380671234567"),
+                new Applicant(id: 2, lastName: "Petrov", firstName: "Petr", middleName: "Petrovich", birthday: new DateOnly(1992, 8, 23), 
+                    phoneNumber: "+380671234568"),
+                new Applicant(id : 3, lastName: "Sidorov", firstName: "Ivan", middleName: "Sidorovich", birthday: new DateOnly(1991, 10, 5), 
+                    phoneNumber: "+380671234569"),
+                new Applicant(id: 4, lastName: "Koval", firstName: "Mykola", middleName: "Orestovych", birthday: new DateOnly(1993, 11, 30), 
+                    phoneNumber: "+380671234570"),
+                new Applicant(id: 5, lastName: "Shevchenko", firstName: "Taras", middleName: "Hryhorovych", birthday: new DateOnly(1985, 3, 9), 
+                    phoneNumber: "+380671234571")
             });
             _applications.AddRange(new List<Application> {
-                new Application(1, new DateOnly(2024, 1, 10), 1, 1),
-                new Application(2, new DateOnly(2024, 1, 12), 2, 2),
-                new Application(3, new DateOnly(2024, 1, 15), 3, 3),
-                new Application(4, new DateOnly(2024, 1, 20), 4, 4),
-                new Application(5, new DateOnly(2024, 1, 25), 5, 1)
+                new Application(id: 1, applicationDate: new DateOnly(2024, 1, 10), applicantId: 1, specialityId: 1),
+                new Application(id: 2, applicationDate: new DateOnly(2024, 1, 12), applicantId: 2, specialityId: 2),
+                new Application(id: 3, applicationDate: new DateOnly(2024, 1, 15), applicantId: 3, specialityId: 3),
+                new Application(id: 4, applicationDate: new DateOnly(2024, 1, 20), applicantId: 4, specialityId: 4),
+                new Application(id: 5, applicationDate: new DateOnly(2024, 1, 25), applicantId: 5, specialityId: 5)
             });
             _examResults.AddRange(new List<ExamResult> {
-                new ExamResult(1, 1, 1, 85),
-                new ExamResult(2, 1, 2, 75),
-                new ExamResult(3, 2, 1, 90),
-                new ExamResult(4, 2, 3, 80),
-                new ExamResult(5, 3, 2, 88),
-                new ExamResult(6, 3, 4, 70),
-                new ExamResult(7, 4, 4, 85),
-                new ExamResult(8, 4, 5, 90),
-                new ExamResult(9, 5, 3, 95),
-                new ExamResult(10, 5, 5, 75)
+                new ExamResult(id: 1, applicantId: 1, subjectId: 1, mark: 85),
+                new ExamResult(id: 2, applicantId: 1, subjectId: 2, mark: 75),
+                new ExamResult(id: 3, applicantId: 2, subjectId: 1, mark: 90),
+                new ExamResult(id: 4, applicantId: 2, subjectId: 3, mark: 80),
+                new ExamResult(id: 5, applicantId: 3, subjectId: 2, mark: 88),
+                new ExamResult(id: 6, applicantId: 3, subjectId: 4, mark: 70),
+                new ExamResult(id: 7, applicantId: 4, subjectId: 4, mark: 85),
+                new ExamResult(id: 8, applicantId: 4, subjectId: 5, mark: 90),
+                new ExamResult(id: 9, applicantId: 5, subjectId: 3, mark: 95),
+                new ExamResult(id: 10, applicantId: 5, subjectId: 5, mark: 75)
             });
             _faculties.AddRange(new List<Faculty> {
-                new Faculty(1, "Computer Science"),
-                new Faculty(2, "Mechanical Engineering"),
-                new Faculty(3, "Civil Engineering"),
-                new Faculty(4, "Electrical Engineering")
+                new Faculty(id: 1, name: "Computer Science"),
+                new Faculty(id: 2, name: "Mechanical Engineering"),
+                new Faculty(id: 3, name: "Civil Engineering"),
+                new Faculty(id: 4, name: "Electrical Engineering")
             });
             _passMarks.AddRange(new List<PassMark> {
-                new PassMark(1, 1, 1, 80),
-                new PassMark(2, 1, 2, 80),
-                new PassMark(3, 1, 3, 85),
-                new PassMark(4, 2, 1, 70),
-                new PassMark(5, 2, 4, 75),
-                new PassMark(6, 3, 2, 80),
-                new PassMark(7, 3, 4, 70),
-                new PassMark(8, 4, 5, 75)
+                new PassMark(id: 1, specialityId: 1, subjectId: 1, mark: 80),
+                new PassMark(id: 2, specialityId: 1, subjectId: 2, mark: 80),
+                new PassMark(id: 3, specialityId: 1, subjectId: 3, mark: 85),
+                new PassMark(id: 4, specialityId: 2, subjectId: 1, mark: 70),
+                new PassMark(id: 5, specialityId: 2, subjectId: 4, mark: 75),
+                new PassMark(id: 6, specialityId: 3, subjectId: 2, mark: 80),
+                new PassMark(id: 7, specialityId: 3, subjectId: 4, mark: 70),
+                new PassMark(id: 8, specialityId: 4, subjectId: 5, mark: 75)
             });
             _specialities.AddRange(new List<Speciality> {
-                new Speciality(1, 101, "Software Engineering", 1),
-                new Speciality(2, 201, "Automotive Engineering", 2),
-                new Speciality(3, 301, "Structural Engineering", 3),
-                new Speciality(4, 401, "Power Systems Engineering", 4)
+                new Speciality(id: 1, number: 101, name: "Software Engineering", facultyId: 1),
+                new Speciality(id: 2, number: 201, name: "Automotive Engineering", facultyId: 2),
+                new Speciality(id: 3, number: 301, name: "Structural Engineering", facultyId: 3),
+                new Speciality(id: 4, number: 401, name: "Power Systems Engineering", facultyId: 4)
             });
             _subjects.AddRange(new List<Subject> {
-                new Subject(1, "Mathematics"),
-                new Subject(2, "Physics"),
-                new Subject(3, "Programming"),
-                new Subject(4, "Mechanics"),
-                new Subject(5, "Electronics")
+                new Subject(id: 1, name: "Mathematics"),
+                new Subject(id: 2, name: "Physics"),
+                new Subject(id: 3, name: "Programming"),
+                new Subject(id: 4, name: "Mechanics"),
+                new Subject(id: 5, name: "Electronics")
             });
         }
     }
