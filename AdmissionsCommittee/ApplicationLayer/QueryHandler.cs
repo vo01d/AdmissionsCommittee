@@ -1,4 +1,5 @@
-﻿using AdmissionsCommittee.DataAccessLayer;
+﻿using AdmissionsCommittee.ApplicationLayer.Views;
+using AdmissionsCommittee.DataAccessLayer;
 using AdmissionsCommittee.DataAccessLayer.Entities;
 
 namespace AdmissionsCommittee.ApplicationLayer {
@@ -10,11 +11,11 @@ namespace AdmissionsCommittee.ApplicationLayer {
         }
 
         public abstract IEnumerable<Applicant> GetAllApplicants();
-        public abstract IEnumerable<Application> GetAllApplications();
-        public abstract IEnumerable<ExamResult> GetAllExamResults();
+        public abstract IEnumerable<ApplicationView> GetAllApplications(); 
+        public abstract IEnumerable<ExamResultView> GetAllExamResults();
         public abstract IEnumerable<Faculty> GetAllFaculties();
-        public abstract IEnumerable<PassMark> GetAllPassMarks();
-        public abstract IEnumerable<Speciality> GetAllSpecialities();
+        public abstract IEnumerable<PassMarkView> GetAllPassMarks();
+        public abstract IEnumerable<SpecialityView> GetAllSpecialities();
         public abstract IEnumerable<Subject> GetAllSubjects();
     }
 }
