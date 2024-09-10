@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|c:\\users\\asus\\desktop\\all\\learning\\programing\\c#\\projects\\admissionscommittee\\admissionscommittee\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|solutionrelative:admissionscommittee\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|c:\\users\\asus\\desktop\\all\\learning\\programing\\c#\\projects\\admissionscommittee\\admissionscommittee\\presentationlayer\\queryinvoker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|solutionrelative:admissionscommittee\\presentationlayer\\queryinvoker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\Program.cs",
-              "RelativeDocumentMoniker": "AdmissionsCommittee\\Program.cs",
-              "ToolTip": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\Program.cs",
-              "RelativeToolTip": "AdmissionsCommittee\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "QueryInvoker.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\PresentationLayer\\QueryInvoker.cs",
+              "RelativeDocumentMoniker": "AdmissionsCommittee\\PresentationLayer\\QueryInvoker.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\PresentationLayer\\QueryInvoker.cs",
+              "RelativeToolTip": "AdmissionsCommittee\\PresentationLayer\\QueryInvoker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T16:05:47.61Z",
+              "WhenOpened": "2024-09-10T15:23:00.527Z",
               "EditorCaption": ""
             }
           ]
