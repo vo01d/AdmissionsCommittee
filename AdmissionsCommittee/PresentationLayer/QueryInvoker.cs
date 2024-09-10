@@ -2,25 +2,17 @@
 
 namespace AdmissionsCommittee.PresentationLayer {
     class QueryInvoker {
-        private readonly List<Command> _commands = new List<Command>();
+        private readonly List<Query> _queries = new List<Query>();
+        public int CommandsCount => _queries.Count; // Function or property?
+        public IReadOnlyList<Query> Queries => _queries.AsReadOnly(); // How to return correctly immutable list???
+        
 
-        public void SetCommand(Command command) {
-            _commands.Add(command);
+        public void SetCommand(Query command) {
+            _queries.Add(command);
         }
 
         public void ExecuteCommand(int commandNumber) {
-            _commands[commandNumber - 1].Execute();
-        }
-
-        public int GetCommandsCount() {
-            return _commands.Count;
-        }
-        
-        public void DrawQueriesMenu() { 
-            Console.WriteLine("Queries menu: ");
-            for (int i = 0; i < _commands.Count; i++) {
-                Console.WriteLine($"{i + 1}. {_commands[i].CommandName}");
-            }
+            _queries[commandNumber - 1].Execute();
         }
     }
 }

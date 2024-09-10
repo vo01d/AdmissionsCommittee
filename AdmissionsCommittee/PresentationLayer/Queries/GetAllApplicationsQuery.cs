@@ -1,8 +1,10 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
-    class GetAllApplicationsCommand : Command {
-        public GetAllApplicationsCommand(string name, QueryHandler queryHandler) : base(name, queryHandler) {
+    class GetAllApplicationsQuery : Query {
+        private readonly IApplicantsQueryHandler _queryHandler;
+        public GetAllApplicationsQuery(string name, IApplicantsQueryHandler queryHandler) : base(name) {
+            _queryHandler = queryHandler;
         }
 
         public override void Execute() {
