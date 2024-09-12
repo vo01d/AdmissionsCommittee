@@ -1,14 +1,13 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
+using AdmissionsCommittee.PresentationLayer.Queries;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
-    class GetAllSpecialitiesQuery : Query {
-        private readonly IApplicantsQueryHandler _queryHandler;
-        public GetAllSpecialitiesQuery(string name, IApplicantsQueryHandler queryHandler) : base(name) {
-            _queryHandler = queryHandler;
+    class GetSpecialitiesQuery : ApplicantsQuery {
+        public GetSpecialitiesQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
-            var specialities = _queryHandler.GetAllSpecialities();
+            var specialities = _queryHandler.GetSpecialities();
 
             Console.WriteLine("Specialities: ");
             foreach (var speciality in specialities) {

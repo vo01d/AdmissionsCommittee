@@ -1,14 +1,13 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
+using AdmissionsCommittee.PresentationLayer.Queries;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
-    class GetAllSubjectsQuery : Query {
-        private readonly IApplicantsQueryHandler _queryHandler;
-        public GetAllSubjectsQuery(string name, IApplicantsQueryHandler queryHandler) : base(name) {
-            _queryHandler = queryHandler;
+    class GetSubjectsQuery : ApplicantsQuery {
+        public GetSubjectsQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
-            var subjects = _queryHandler.GetAllSubjects();
+            var subjects = _queryHandler.GetSubjects();
 
             Console.WriteLine("Subjects: ");
             foreach (var subject in subjects) {

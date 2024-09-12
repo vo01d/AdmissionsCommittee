@@ -1,5 +1,6 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
 using AdmissionsCommittee.PresentationLayer.Commands;
+using AdmissionsCommittee.PresentationLayer.Queries;
 using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer {
@@ -14,13 +15,13 @@ namespace AdmissionsCommittee.PresentationLayer {
         }
 
         private void SetCommands() {
-            _queryInvoker.SetCommand(new GetAllApplicantsQuery("Print information about all applicants", _queryHandler));
-            _queryInvoker.SetCommand(new GetAllApplicationsQuery("Print information about all applications", _queryHandler));
-            _queryInvoker.SetCommand(new GetAllExamResultsQuery("Print information about all exam results", _queryHandler));
-            _queryInvoker.SetCommand(new GetAllFacultiesQuery("Print information about all faculties", _queryHandler));
-            _queryInvoker.SetCommand(new GetAllPassMarksQuery("Print information about all pass marks", _queryHandler));
-            _queryInvoker.SetCommand(new GetAllSpecialitiesQuery("Print information about all specialities", _queryHandler));
-            _queryInvoker.SetCommand(new GetAllSubjectsQuery("Print information about all subjects", _queryHandler));
+            _queryInvoker.SetCommand(new GetApplicantsQuery("Print information about applicants", _queryHandler));
+            _queryInvoker.SetCommand(new GetApplicationsQuery("Print information about applications", _queryHandler));
+            _queryInvoker.SetCommand(new GetExamResultsQuery("Print information about exam results", _queryHandler));
+            _queryInvoker.SetCommand(new GetFacultiesQuery("Print information about faculties", _queryHandler));
+            _queryInvoker.SetCommand(new GetPassMarksQuery("Print information about pass marks", _queryHandler));
+            _queryInvoker.SetCommand(new GetSpecialitiesQuery("Print information about specialities", _queryHandler));
+            _queryInvoker.SetCommand(new GetSubjectsQuery("Print information about subjects", _queryHandler));
         }
 
         public void Start() {

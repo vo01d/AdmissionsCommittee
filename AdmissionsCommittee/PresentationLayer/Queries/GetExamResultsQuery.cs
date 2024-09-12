@@ -1,14 +1,13 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
+using AdmissionsCommittee.PresentationLayer.Queries;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
-    class GetAllExamResultsQuery : Query {
-        private readonly IApplicantsQueryHandler _queryHandler;
-        public GetAllExamResultsQuery(string name, IApplicantsQueryHandler queryHandler) : base(name) {
-            _queryHandler = queryHandler;
+    class GetExamResultsQuery : ApplicantsQuery {
+        public GetExamResultsQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
-            var examResults = _queryHandler.GetAllExamResults();
+            var examResults = _queryHandler.GetExamResults();
 
             Console.WriteLine("Exam results: ");
             foreach (var examResult in examResults) {

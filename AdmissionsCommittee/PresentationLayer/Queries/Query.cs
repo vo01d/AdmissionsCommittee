@@ -1,7 +1,7 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
-    abstract class Query { // Does this class need QueryHandler?
+    abstract class Query { 
         public string Name { get; }
 
         protected Query(string name) {
