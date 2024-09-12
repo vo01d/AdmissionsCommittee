@@ -6,11 +6,11 @@ namespace AdmissionsCommittee.ApplicationLayer {
     class ApplicantsDBQueryHandler : IApplicantsQueryHandler {
         private readonly ApplicantsDB _applicantsDB = new ApplicantsDB();
 
-        public IEnumerable<Applicant> GetAllApplicants() {
+        public IEnumerable<Applicant> GetApplicants() {
             return _applicantsDB.Applicants;
         }
 
-        public IEnumerable<ApplicationView> GetAllApplications() {
+        public IEnumerable<ApplicationView> GetApplications() {
             return from application in _applicantsDB.Applications
                    join applicant in _applicantsDB.Applicants on application.ApplicantId equals applicant.Id
                    join speciality in _applicantsDB.Specialities on application.SpecialityId equals speciality.Id
@@ -27,7 +27,7 @@ namespace AdmissionsCommittee.ApplicationLayer {
                    };
         }
 
-        public IEnumerable<ExamResultView> GetAllExamResults() {
+        public IEnumerable<ExamResultView> GetExamResults() {
             return from examResult in _applicantsDB.ExamResults
                    join applicant in _applicantsDB.Applicants on examResult.ApplicantId equals applicant.Id
                    join subject in _applicantsDB.Subjects on examResult.SubjectId equals subject.Id
@@ -41,11 +41,11 @@ namespace AdmissionsCommittee.ApplicationLayer {
                    };
         }
 
-        public IEnumerable<Faculty> GetAllFaculties() {
+        public IEnumerable<Faculty> GetFaculties() {
             return _applicantsDB.Faculties;
         }
 
-        public IEnumerable<PassMarkView> GetAllPassMarks() {
+        public IEnumerable<PassMarkView> GetPassMarks() {
             return from passMark in _applicantsDB.PassMarks
                    join speciality in _applicantsDB.Specialities on passMark.SpecialityId equals speciality.Id
                    join faculty in _applicantsDB.Faculties on speciality.FacultyId equals faculty.Id
@@ -60,18 +60,18 @@ namespace AdmissionsCommittee.ApplicationLayer {
                    };
         }
 
-        public IEnumerable<SpecialityView> GetAllSpecialities() {
+        public IEnumerable<SpecialityView> GetSpecialities() {
             return from speciality in _applicantsDB.Specialities
                    join faculty in _applicantsDB.Faculties on speciality.FacultyId equals faculty.Id
                    select new SpecialityView {
                        SpecialityId = speciality.Id,
                        SpecialityNumber = speciality.Number,
                        SpecialityName = speciality.Name,
-                       FacultyName= faculty.Name,
+                       FacultyName = faculty.Name,
                    };
         }
 
-        public IEnumerable<Subject> GetAllSubjects() {
+        public IEnumerable<Subject> GetSubjects() {
             return _applicantsDB.Subjects;
         }
     }
