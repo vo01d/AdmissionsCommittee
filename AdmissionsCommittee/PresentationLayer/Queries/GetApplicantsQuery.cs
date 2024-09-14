@@ -1,5 +1,7 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
 using AdmissionsCommittee.PresentationLayer.Queries;
+using AdmissionsCommittee.Utils;
+using ConsoleTables;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
     class GetApplicantsQuery : ApplicantsQuery {
@@ -11,11 +13,10 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
 
             if (applicants.Any()) {
                 Console.WriteLine("Applicants: ");
-                foreach (var applicant in applicants) {
-                    Console.WriteLine(applicant);
-                }
+                ConsoleOutputHelper.WriteApplicantsTable(applicants);
             } else {
                 Console.WriteLine($"No applicants were found");
+                Console.WriteLine();
             }
         }
     }

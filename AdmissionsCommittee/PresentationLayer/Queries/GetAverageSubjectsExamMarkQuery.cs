@@ -1,4 +1,6 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
+using AdmissionsCommittee.DataAccessLayer.Entities;
+using ConsoleTables;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
     class GetAverageSubjectsExamMarkQuery : ApplicantsQuery {
@@ -11,11 +13,16 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
             Console.WriteLine();
             if (averageSubjectsExamMark.Any()) {
                 Console.WriteLine($"Average exam mark for each subject: ");
+
+                var table = new ConsoleTable("Subject name", "Average mark"); // ???
+                table.Configure(tableOptions => tableOptions.EnableCount = false);
                 foreach (var averageSubjectExamMark in averageSubjectsExamMark) {
-                    Console.WriteLine($"{averageSubjectExamMark.SubjectName} {averageSubjectExamMark.AverageMark}");
+                    table.AddRow(averageSubjectExamMark.SubjectName, averageSubjectExamMark.AverageMark);
                 }
+                table.Write();
             } else {
                 Console.WriteLine($"No subjects or exam results were found");
+                Console.WriteLine();
             }
         }
     }

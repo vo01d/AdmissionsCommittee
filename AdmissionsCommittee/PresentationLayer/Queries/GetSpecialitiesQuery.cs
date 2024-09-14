@@ -1,6 +1,6 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
-using AdmissionsCommittee.DataAccessLayer.Entities;
 using AdmissionsCommittee.PresentationLayer.Queries;
+using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
     class GetSpecialitiesQuery : ApplicantsQuery {
@@ -12,11 +12,10 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
 
             if (specialities.Any()) {
                 Console.WriteLine("Specialities: ");
-                foreach (var speciality in specialities) {
-                    Console.WriteLine(speciality);
-                }
+                ConsoleOutputHelper.WriteSpecialityViewsTable(specialities);   
             } else {
                 Console.WriteLine($"No specialities were found");
+                Console.WriteLine();
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
-using AdmissionsCommittee.DataAccessLayer.Entities;
 using AdmissionsCommittee.PresentationLayer.Queries;
+using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
     class GetApplicationsQuery : ApplicantsQuery {
@@ -12,11 +12,10 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
 
             if (applications.Any()) {
                 Console.WriteLine("Applications: ");
-                foreach (var applicantion in applications) {
-                    Console.WriteLine(applicantion);
-                }
+                ConsoleOutputHelper.WriteApplicationViewsTable(applications);
             } else {
                 Console.WriteLine($"No applications were found");
+                Console.WriteLine();
             }
         }
     }

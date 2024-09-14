@@ -15,17 +15,16 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
             Console.WriteLine();
             if (examResults.Any()) {
                 Console.WriteLine($"Exam results equal or greater to {lowerBound}: ");
-                foreach (var examResult in examResults) {
-                    Console.WriteLine(examResult);
-                }
+                ConsoleOutputHelper.WriteExamResultViewsTable(examResults);
             } else {
                 Console.WriteLine($"No exam results found that equal or greater than {lowerBound}");
+                Console.WriteLine();
             }
         }
 
         private int GetValidLowerBound() {
             while (true) {
-                Console.WriteLine($"Enter lower bound mark in range from {MinMark} to {MaxMark}:");
+                Console.Write($"Enter lower bound mark in range from {MinMark} to {MaxMark}: ");
                 string input = Console.ReadLine() ?? throw new ArgumentNullException();
 
                 try {

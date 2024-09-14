@@ -1,5 +1,6 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
 using AdmissionsCommittee.PresentationLayer.Queries;
+using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
     class GetSubjectsQuery : ApplicantsQuery {
@@ -11,11 +12,10 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
 
             if (subjects.Any()) {
                 Console.WriteLine("Subjects: ");
-                foreach (var subject in subjects) {
-                    Console.WriteLine(subject);
-                }
+                ConsoleOutputHelper.WriteSubjecsTable(subjects);
             } else {
                 Console.WriteLine($"No subjects were found");
+                Console.WriteLine();
             }
         }
     }

@@ -4,7 +4,7 @@ using AdmissionsCommittee.PresentationLayer.Queries;
 using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer {
-    class App { // how to correcly implement that class?
+    class App { 
         private readonly QueryInvoker _queryInvoker;
         private readonly IApplicantsQueryHandler _queryHandler; 
 
@@ -30,10 +30,10 @@ namespace AdmissionsCommittee.PresentationLayer {
         }
 
         public void Start() {
-            DisplayHelper.DisplayQueriesMenu(_queryInvoker.Queries);
+            ConsoleOutputHelper.WriteQueriesMenu(_queryInvoker.Queries);
+            Console.WriteLine();
 
             while (true) {
-                Console.WriteLine();
                 Console.Write("Enter query number: ");
                 string userInput = Console.ReadLine() ?? throw new ArgumentNullException();
 

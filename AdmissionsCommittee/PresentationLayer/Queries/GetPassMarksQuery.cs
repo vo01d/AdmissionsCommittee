@@ -1,5 +1,6 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
 using AdmissionsCommittee.PresentationLayer.Queries;
+using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
     class GetPassMarksQuery : ApplicantsQuery {
@@ -11,11 +12,10 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
 
             if (passMarks.Any()) {
                 Console.WriteLine("Pass marks: ");
-                foreach (var passMark in passMarks) {
-                    Console.WriteLine(passMark);
-                }
+                ConsoleOutputHelper.WritePassMarkViewsTable(passMarks);
             } else {
                 Console.WriteLine($"No pass marks were found");
+                Console.WriteLine();
             }
         }
     }

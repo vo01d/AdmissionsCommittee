@@ -1,4 +1,5 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
+using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
     class GetApplicantsByFirstNameQuery : ApplicantsQuery {
@@ -6,7 +7,7 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
         }
 
         public override void Execute() {
-            Console.WriteLine("Enter first name: ");
+            Console.Write("Enter first name: ");
             string firstName = Console.ReadLine() ?? throw new ArgumentNullException();
 
             var applicants = _queryHandler.GetApplicantsByFirstName(firstName);
@@ -14,11 +15,10 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
             Console.WriteLine();
             if (applicants.Any()) {
                 Console.WriteLine($"Applicants with first name \"{firstName}\": ");
-                foreach (var applicant in applicants) {
-                    Console.WriteLine(applicant);
-                }
+                ConsoleOutputHelper.WriteApplicantsTable(applicants);
             } else {
                 Console.WriteLine($"No applicants found with the first name \"{firstName}\"");
+                Console.WriteLine();
             }
         }
     }
