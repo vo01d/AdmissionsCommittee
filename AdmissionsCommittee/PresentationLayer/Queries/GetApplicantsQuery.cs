@@ -9,9 +9,13 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
         public override void Execute() {
             var applicants = _queryHandler.GetApplicants();
 
-            Console.WriteLine("Applicants: ");
-            foreach (var applicant in applicants) {
-                Console.WriteLine(applicant);
+            if (applicants.Any()) {
+                Console.WriteLine("Applicants: ");
+                foreach (var applicant in applicants) {
+                    Console.WriteLine(applicant);
+                }
+            } else {
+                Console.WriteLine($"No applicants were found");
             }
         }
     }

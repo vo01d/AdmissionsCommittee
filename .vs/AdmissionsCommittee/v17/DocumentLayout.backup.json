@@ -1,12 +1,85 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|c:\\users\\asus\\desktop\\all\\learning\\programing\\c#\\projects\\admissionscommittee\\admissionscommittee\\applicationlayer\\applicantsdbqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|solutionrelative:admissionscommittee\\applicationlayer\\applicantsdbqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|c:\\users\\asus\\desktop\\all\\learning\\programing\\c#\\projects\\admissionscommittee\\admissionscommittee\\dataaccesslayer\\manualapplicantsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|solutionrelative:admissionscommittee\\dataaccesslayer\\manualapplicantsdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|c:\\users\\asus\\desktop\\all\\learning\\programing\\c#\\projects\\admissionscommittee\\admissionscommittee\\presentationlayer\\queries\\getapplicantsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|solutionrelative:admissionscommittee\\presentationlayer\\queries\\getapplicantsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|c:\\users\\asus\\desktop\\all\\learning\\programing\\c#\\projects\\admissionscommittee\\admissionscommittee\\presentationlayer\\queries\\getaveragesubjectsexammarkquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8D10BB49-4472-4AC2-A75E-86AC074E5D87}|AdmissionsCommittee\\AdmissionsCommittee.csproj|solutionrelative:admissionscommittee\\presentationlayer\\queries\\getaveragesubjectsexammarkquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetApplicantsQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\PresentationLayer\\Queries\\GetApplicantsQuery.cs",
+              "RelativeDocumentMoniker": "AdmissionsCommittee\\PresentationLayer\\Queries\\GetApplicantsQuery.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\PresentationLayer\\Queries\\GetApplicantsQuery.cs",
+              "RelativeToolTip": "AdmissionsCommittee\\PresentationLayer\\Queries\\GetApplicantsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T13:44:50.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManualApplicantsDB.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\DataAccessLayer\\ManualApplicantsDB.cs",
+              "RelativeDocumentMoniker": "AdmissionsCommittee\\DataAccessLayer\\ManualApplicantsDB.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\DataAccessLayer\\ManualApplicantsDB.cs",
+              "RelativeToolTip": "AdmissionsCommittee\\DataAccessLayer\\ManualApplicantsDB.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T13:38:14.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetAverageSubjectsExamMarkQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\PresentationLayer\\Queries\\GetAverageSubjectsExamMarkQuery.cs",
+              "RelativeDocumentMoniker": "AdmissionsCommittee\\PresentationLayer\\Queries\\GetAverageSubjectsExamMarkQuery.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\PresentationLayer\\Queries\\GetAverageSubjectsExamMarkQuery.cs",
+              "RelativeToolTip": "AdmissionsCommittee\\PresentationLayer\\Queries\\GetAverageSubjectsExamMarkQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T13:25:01.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicantsDBQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\ApplicationLayer\\ApplicantsDBQueryHandler.cs",
+              "RelativeDocumentMoniker": "AdmissionsCommittee\\ApplicationLayer\\ApplicantsDBQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects\\AdmissionsCommittee\\AdmissionsCommittee\\ApplicationLayer\\ApplicantsDBQueryHandler.cs",
+              "RelativeToolTip": "AdmissionsCommittee\\ApplicationLayer\\ApplicantsDBQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T13:03:14.027Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,4 @@
-﻿using AdmissionsCommittee.ApplicationLayer;
-
-namespace AdmissionsCommittee.PresentationLayer.Commands {
+﻿namespace AdmissionsCommittee.PresentationLayer.Commands {
     abstract class Query { 
         public string Name { get; }
 
