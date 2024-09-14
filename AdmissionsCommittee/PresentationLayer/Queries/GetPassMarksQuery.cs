@@ -9,9 +9,13 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
         public override void Execute() {
             var passMarks = _queryHandler.GetPassMarks();
 
-            Console.WriteLine("Pass marks: ");
-            foreach (var passMark in passMarks) {
-                Console.WriteLine(passMark);
+            if (passMarks.Any()) {
+                Console.WriteLine("Pass marks: ");
+                foreach (var passMark in passMarks) {
+                    Console.WriteLine(passMark);
+                }
+            } else {
+                Console.WriteLine($"No pass marks were found");
             }
         }
     }

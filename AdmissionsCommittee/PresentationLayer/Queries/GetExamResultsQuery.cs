@@ -9,9 +9,13 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
         public override void Execute() {
             var examResults = _queryHandler.GetExamResults();
 
-            Console.WriteLine("Exam results: ");
-            foreach (var examResult in examResults) {
-                Console.WriteLine(examResult);
+            if (examResults.Any()) {
+                Console.WriteLine("Exam results: ");
+                foreach (var examResult in examResults) {
+                    Console.WriteLine(examResult);
+                }
+            } else {
+                Console.WriteLine($"No exam results were found");
             }
         }
     }

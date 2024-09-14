@@ -1,4 +1,5 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
+using AdmissionsCommittee.DataAccessLayer.Entities;
 using AdmissionsCommittee.PresentationLayer.Queries;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
@@ -9,9 +10,13 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
         public override void Execute() {
             var applications = _queryHandler.GetApplications();
 
-            Console.WriteLine("Applications: ");
-            foreach (var applicantion in applications) {
-                Console.WriteLine(applicantion);
+            if (applications.Any()) {
+                Console.WriteLine("Applications: ");
+                foreach (var applicantion in applications) {
+                    Console.WriteLine(applicantion);
+                }
+            } else {
+                Console.WriteLine($"No applications were found");
             }
         }
     }

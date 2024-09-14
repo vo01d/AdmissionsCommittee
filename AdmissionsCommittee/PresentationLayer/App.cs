@@ -5,8 +5,8 @@ using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer {
     class App { // how to correcly implement that class?
-        private QueryInvoker _queryInvoker;
-        private IApplicantsQueryHandler _queryHandler; 
+        private readonly QueryInvoker _queryInvoker;
+        private readonly IApplicantsQueryHandler _queryHandler; 
 
         public App(QueryInvoker queryInvoker, IApplicantsQueryHandler queryHandler) {
             _queryInvoker = queryInvoker;
@@ -22,21 +22,35 @@ namespace AdmissionsCommittee.PresentationLayer {
             _queryInvoker.SetCommand(new GetPassMarksQuery("Print information about pass marks", _queryHandler));
             _queryInvoker.SetCommand(new GetSpecialitiesQuery("Print information about specialities", _queryHandler));
             _queryInvoker.SetCommand(new GetSubjectsQuery("Print information about subjects", _queryHandler));
+            _queryInvoker.SetCommand(new GetApplicantsByFirstNameQuery("Print information about applicants with specified first name",
+                _queryHandler));
+            _queryInvoker.SetCommand(new GetExamResultsEqualOrAboveQuery("Print information about applicants exam results that " +
+                "equal or greater than specified number", _queryHandler));
+            _queryInvoker.SetCommand(new GetAverageSubjectsExamMarkQuery("Print average exam mark for each subject", _queryHandler));
         }
 
         public void Start() {
             DisplayHelper.DisplayQueriesMenu(_queryInvoker.Queries);
+
             while (true) {
                 Console.WriteLine();
                 Console.Write("Enter query number: ");
-                string queryNumber = Console.ReadLine() ?? "";
+                string userInput = Console.ReadLine() ?? throw new ArgumentNullException();
 
+                int queryNumber;
                 try {
-                    _queryInvoker.ExecuteCommand(InputValidator.ValidateInt32InRange(queryNumber, 1, _queryInvoker.CommandsCount));
+                    queryNumber = InputValidator.ValidateInt32InRange(userInput, 1, _queryInvoker.CommandsCount);
                 }
-                catch (Exception) {
-                    Console.WriteLine($"Unknown query! Please enter a number in range from 1 to {_queryInvoker.CommandsCount}");
+                catch (FormatException) {
+                    Console.WriteLine("Invalid input! Please enter a valid integer.");
+                    continue;
                 }
+                catch (Exception ex) when (ex is ArgumentOutOfRangeException || ex is OverflowException) {
+                    Console.WriteLine($"Unknown query number! Please enter a number in range from 1 to {_queryInvoker.CommandsCount}.");
+                    continue;
+                }
+
+                _queryInvoker.ExecuteCommand(queryNumber);
             }
         }
     }

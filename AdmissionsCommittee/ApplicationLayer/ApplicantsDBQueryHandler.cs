@@ -4,7 +4,11 @@ using AdmissionsCommittee.DataAccessLayer.Entities;
 
 namespace AdmissionsCommittee.ApplicationLayer {
     class ApplicantsDBQueryHandler : IApplicantsQueryHandler {
-        private readonly ApplicantsDB _applicantsDB = new ApplicantsDB();
+        private readonly IApplicantDB _applicantsDB;
+
+        public ApplicantsDBQueryHandler(IApplicantDB applicantDB) {
+            _applicantsDB = applicantDB;
+        }
 
         public IEnumerable<Applicant> GetApplicants() {
             return _applicantsDB.Applicants;
@@ -73,6 +77,23 @@ namespace AdmissionsCommittee.ApplicationLayer {
 
         public IEnumerable<Subject> GetSubjects() {
             return _applicantsDB.Subjects;
+        }
+
+        public IEnumerable<(string SubjectName, double AverageMark)> GetAverageSubjectsExamMark() {
+            return from examResult in GetExamResults()
+                   group examResult by examResult.SubjectName into examResultGroup
+                   select (
+                       SubjectName: examResultGroup.Key,
+                       AverageMark: examResultGroup.Average(examResultGroup => examResultGroup.Mark)
+                   );
+        }
+
+        public IEnumerable<Applicant> GetApplicantsByFirstName(string firstName) {
+            return _applicantsDB.Applicants.Where(applicant => applicant.FirstName == firstName);
+        }
+
+        public IEnumerable<ExamResultView> GetExamResultsEqualOrAbove(int lowerBound) {
+            return GetExamResults().Where(examResult => examResult.Mark >= lowerBound);
         }
     }
 }

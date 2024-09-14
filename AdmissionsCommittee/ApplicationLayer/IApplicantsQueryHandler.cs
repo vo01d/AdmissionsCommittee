@@ -10,5 +10,8 @@ namespace AdmissionsCommittee.ApplicationLayer {
         IEnumerable<PassMarkView> GetPassMarks();
         IEnumerable<SpecialityView> GetSpecialities();
         IEnumerable<Subject> GetSubjects();
+        IEnumerable<(string SubjectName, double AverageMark)> GetAverageSubjectsExamMark();
+        IEnumerable<Applicant> GetApplicantsByFirstName(string firstName);
+        IEnumerable<ExamResultView> GetExamResultsEqualOrAbove(int lowerBound);
     }
 }

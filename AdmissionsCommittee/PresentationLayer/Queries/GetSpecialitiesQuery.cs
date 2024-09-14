@@ -1,4 +1,5 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
+using AdmissionsCommittee.DataAccessLayer.Entities;
 using AdmissionsCommittee.PresentationLayer.Queries;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
@@ -9,9 +10,13 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
         public override void Execute() {
             var specialities = _queryHandler.GetSpecialities();
 
-            Console.WriteLine("Specialities: ");
-            foreach (var speciality in specialities) {
-                Console.WriteLine(speciality);
+            if (specialities.Any()) {
+                Console.WriteLine("Specialities: ");
+                foreach (var speciality in specialities) {
+                    Console.WriteLine(speciality);
+                }
+            } else {
+                Console.WriteLine($"No specialities were found");
             }
         }
     }

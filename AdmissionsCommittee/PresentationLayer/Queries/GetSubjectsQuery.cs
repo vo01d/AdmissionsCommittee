@@ -9,9 +9,13 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
         public override void Execute() {
             var subjects = _queryHandler.GetSubjects();
 
-            Console.WriteLine("Subjects: ");
-            foreach (var subject in subjects) {
-                Console.WriteLine(subject);
+            if (subjects.Any()) {
+                Console.WriteLine("Subjects: ");
+                foreach (var subject in subjects) {
+                    Console.WriteLine(subject);
+                }
+            } else {
+                Console.WriteLine($"No subjects were found");
             }
         }
     }
