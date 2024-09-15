@@ -11,9 +11,5 @@
             SubjectId = subjectId;
             Mark = mark;
         }
-
-        public override string ToString() {
-            return $"{Id} {ApplicantId} {SubjectId} {Mark}";
-        }
     }
 }

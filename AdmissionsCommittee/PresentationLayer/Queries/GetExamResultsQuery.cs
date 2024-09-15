@@ -1,5 +1,6 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
 using AdmissionsCommittee.PresentationLayer.Queries;
+using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
     class GetExamResultsQuery : ApplicantsQuery {
@@ -11,11 +12,10 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
 
             if (examResults.Any()) {
                 Console.WriteLine("Exam results: ");
-                foreach (var examResult in examResults) {
-                    Console.WriteLine(examResult);
-                }
+                ConsoleOutputHelper.WriteExamResultViewsTable(examResults);
             } else {
                 Console.WriteLine($"No exam results were found");
+                Console.WriteLine();
             }
         }
     }

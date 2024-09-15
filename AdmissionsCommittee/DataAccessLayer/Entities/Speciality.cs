@@ -11,9 +11,5 @@
             Name = name;
             FacultyId = facultyId;
         }
-
-        public override string ToString() {
-            return $"{Id} {Number} {Name} {FacultyId}";
-        }
     }
 }

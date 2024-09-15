@@ -1,6 +1,7 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
 using AdmissionsCommittee.DataAccessLayer.Entities;
 using AdmissionsCommittee.PresentationLayer.Queries;
+using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
     class GetFacultiesQuery : ApplicantsQuery {
@@ -12,11 +13,10 @@ namespace AdmissionsCommittee.PresentationLayer.Commands {
 
             if (faculties.Any()) {
                 Console.WriteLine("Faculties: ");
-                foreach (var faculty in faculties) {
-                    Console.WriteLine(faculty);
-                }
+                ConsoleOutputHelper.WriteFacultiesTable(faculties);
             } else {
                 Console.WriteLine($"No faculties were found");
+                Console.WriteLine();
             }
         }
     }
