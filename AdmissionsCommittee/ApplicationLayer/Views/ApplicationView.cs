@@ -8,9 +8,5 @@
         public required int SpecialityNumber { get; init; }
         public required string SpecialityName { get; init; }
         public required string FacultyName { get; init; }
-
-        public override string ToString() {
-            return $"{ApplicationId} {ApplicationDate} {Lastname} {FirstName} {MiddleName} {SpecialityNumber} {SpecialityName} {FacultyName}"; 
-        }
     }
 }

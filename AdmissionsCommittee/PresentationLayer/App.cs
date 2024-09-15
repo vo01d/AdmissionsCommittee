@@ -27,6 +27,11 @@ namespace AdmissionsCommittee.PresentationLayer {
             _queryInvoker.SetCommand(new GetExamResultsEqualOrAboveQuery("Print information about applicants exam results that " +
                 "equal or greater than specified number", _queryHandler));
             _queryInvoker.SetCommand(new GetAverageSubjectsExamMarkQuery("Print average exam mark for each subject", _queryHandler));
+            _queryInvoker.SetCommand(new GetAverageApplicantsExamMarkQuery("Print average exam mark for each applicant", _queryHandler));
+            _queryInvoker.SetCommand(new GetAverageSpecialitiesPassMarkQuery("Print average pass mark for each speciality", _queryHandler));
+            _queryInvoker.SetCommand(new GetNumberOfApplicantsInEachFacultyQuery("Print number of applicants in each faculty", _queryHandler));
+            _queryInvoker.SetCommand(new GetSubjectsPassCountQuery("Print pass count for each subject", _queryHandler));
+            _queryInvoker.SetCommand(new GetSubjectsLowestExamMarkQuery("Print the lowest exam mark for each subject", _queryHandler));
         }
 
         public void Start() {

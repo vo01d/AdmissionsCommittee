@@ -37,7 +37,7 @@ namespace AdmissionsCommittee.Utils {
             var table = new ConsoleTable("Id", "Last name", "First name", "Middle name", "Subject name", "Mark");
             table.Configure(tableOptions => tableOptions.EnableCount = false);
             foreach (var examResult in examResults) {
-                table.AddRow(examResult.ExamResultId, examResult.Lastname, examResult.FirstName, examResult.MiddleName,
+                table.AddRow(examResult.ExamResultId, examResult.LastName, examResult.FirstName, examResult.MiddleName,
                     examResult.SubjectName, examResult.Mark);
             }
             table.Write();

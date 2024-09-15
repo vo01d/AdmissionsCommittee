@@ -37,7 +37,7 @@ namespace AdmissionsCommittee.ApplicationLayer {
                    join subject in _applicantsDB.Subjects on examResult.SubjectId equals subject.Id
                    select new ExamResultView {
                        ExamResultId = examResult.Id,
-                       Lastname = applicant.LastName,
+                       LastName = applicant.LastName,
                        FirstName = applicant.FirstName,
                        MiddleName = applicant.MiddleName,
                        SubjectName = subject.Name,
@@ -79,21 +79,93 @@ namespace AdmissionsCommittee.ApplicationLayer {
             return _applicantsDB.Subjects;
         }
 
-        public IEnumerable<(string SubjectName, double AverageMark)> GetAverageSubjectsExamMark() {
-            return from examResult in GetExamResults()
-                   group examResult by examResult.SubjectName into examResultGroup
-                   select (
-                       SubjectName: examResultGroup.Key,
-                       AverageMark: examResultGroup.Average(examResultGroup => examResultGroup.Mark)
-                   );
-        }
-
         public IEnumerable<Applicant> GetApplicantsByFirstName(string firstName) {
             return _applicantsDB.Applicants.Where(applicant => applicant.FirstName == firstName);
         }
 
         public IEnumerable<ExamResultView> GetExamResultsEqualOrAbove(int lowerBound) {
             return GetExamResults().Where(examResult => examResult.Mark >= lowerBound);
+        }
+
+        public IEnumerable<(string SubjectName, double AverageExamMark)> GetAverageSubjectsExamMark() {
+            return from examResult in GetExamResults()
+                   group examResult by examResult.SubjectName into examResultGroup
+                   select (
+                       SubjectName: examResultGroup.Key,
+                       AverageMark: examResultGroup.Average(examResult => examResult.Mark)
+                   );
+        }
+
+        public IEnumerable<(int ApplicantId, string LastName, string FirstName, string MiddleName, double AverageExamMark)>
+            GetAverageApplicantsExamMark() {
+            return from examResult in _applicantsDB.ExamResults
+                   join applicant in _applicantsDB.Applicants on examResult.ApplicantId equals applicant.Id
+                   group examResult by new {
+                       applicant.Id,
+                       applicant.LastName,
+                       applicant.FirstName,
+                       applicant.MiddleName
+                   } into examResultGroupByApplicant
+                   select (
+                        ApplicantID: examResultGroupByApplicant.Key.Id,
+                        LastName: examResultGroupByApplicant.Key.LastName,
+                        FirstName: examResultGroupByApplicant.Key.FirstName,
+                        MiddleName: examResultGroupByApplicant.Key.MiddleName,
+                        AverageExamMark: examResultGroupByApplicant.Average(examResult => examResult.Mark)
+                   );
+        }
+
+        public IEnumerable<(int SpecialityNumber, string SpecialityName, string FacultyName, double AveragePassMark)>
+            GetAverageSpecialitiesPassMark() {
+            return from passMark in GetPassMarks()
+                   group passMark by new {
+                       passMark.SpecialityNumber,
+                       passMark.SpecialityName,
+                       passMark.FacultyName
+                   } into passMarkGroupBySpeciality
+                   select (
+                        SpecialityNumber: passMarkGroupBySpeciality.Key.SpecialityNumber,
+                        SpecialityName: passMarkGroupBySpeciality.Key.SpecialityName,
+                        FacultyName: passMarkGroupBySpeciality.Key.FacultyName,
+                        AveragePassMark: passMarkGroupBySpeciality.Average(passMark => passMark.Mark)
+                   );
+        }
+
+        public IEnumerable<(string FacultyName, int NumberOfApplicants)> GetNumberOfApplicantsInEachFaculty() {
+            return from application in _applicantsDB.Applications
+                   join speciality in _applicantsDB.Specialities on application.SpecialityId equals speciality.Id
+                   join faculty in _applicantsDB.Faculties on speciality.FacultyId equals faculty.Id
+                   group application by faculty.Name into facultyApplicationGroup
+                   select (
+                        FacultyName: facultyApplicationGroup.Key,
+                        NumberOfApplicants: facultyApplicationGroup
+                                            .Select(application => application.ApplicantId)
+                                            .Distinct()
+                                            .Count()
+                   );
+        }
+
+        public IEnumerable<(string SubjectName, int PassCount)> GetSubjectsPassCount() {
+            return from examResult in _applicantsDB.ExamResults
+                   join subject in _applicantsDB.Subjects on examResult.SubjectId equals subject.Id
+                   group examResult by subject.Name into examResultGroupBySubject
+                   select (
+                        SubjectName: examResultGroupBySubject.Key,
+                        PassCount: examResultGroupBySubject
+                                    .Select(examResult => examResult.ApplicantId)
+                                    .Distinct()
+                                    .Count()
+                   );
+        }
+
+        public IEnumerable<(string SubjectName, int LowestExamMark)> GetSubjectsLowestExamMark() {
+            return from examResult in _applicantsDB.ExamResults
+                   join subject in _applicantsDB.Subjects on examResult.SubjectId equals subject.Id
+                   group examResult.Mark by subject.Name into examMarkGroupBySubject
+                   select (
+                        SubjectName: examMarkGroupBySubject.Key,
+                        LowestExamMark: examMarkGroupBySubject.Min()
+                   );
         }
     }
 }

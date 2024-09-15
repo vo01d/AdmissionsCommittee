@@ -15,9 +15,5 @@
             Birthday = birthday;
             PhoneNumber = phoneNumber;
         }
-
-        public override string ToString() {
-            return $"{Id} {LastName} {FirstName} {MiddleName} {Birthday} {PhoneNumber}";
-        }
     }
 }

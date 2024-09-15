@@ -11,9 +11,5 @@
             ApplicantId = applicantId;
             SpecialityId = specialityId;
         }
-
-        public override string ToString() {
-            return $"{Id} {ApplicationDate} {ApplicantId} {SpecialityId}";
-        }
     }
 }
