@@ -1,0 +1,290 @@
+[
+  {
+    "Id": 1,
+    "SpecialityId": 1,
+    "SubjectId": 1,
+    "Mark": 75
+  },
+  {
+    "Id": 2,
+    "SpecialityId": 1,
+    "SubjectId": 6,
+    "Mark": 70
+  },
+  {
+    "Id": 3,
+    "SpecialityId": 1,
+    "SubjectId": 7,
+    "Mark": 65
+  },
+  {
+    "Id": 4,
+    "SpecialityId": 2,
+    "SubjectId": 1,
+    "Mark": 78
+  },
+  {
+    "Id": 5,
+    "SpecialityId": 2,
+    "SubjectId": 6,
+    "Mark": 72
+  },
+  {
+    "Id": 6,
+    "SpecialityId": 2,
+    "SubjectId": 7,
+    "Mark": 68
+  },
+  {
+    "Id": 7,
+    "SpecialityId": 3,
+    "SubjectId": 2,
+    "Mark": 80
+  },
+  {
+    "Id": 8,
+    "SpecialityId": 3,
+    "SubjectId": 4,
+    "Mark": 75
+  },
+  {
+    "Id": 9,
+    "SpecialityId": 3,
+    "SubjectId": 5,
+    "Mark": 70
+  },
+  {
+    "Id": 10,
+    "SpecialityId": 4,
+    "SubjectId": 4,
+    "Mark": 82
+  },
+  {
+    "Id": 11,
+    "SpecialityId": 4,
+    "SubjectId": 2,
+    "Mark": 78
+  },
+  {
+    "Id": 12,
+    "SpecialityId": 4,
+    "SubjectId": 5,
+    "Mark": 73
+  },
+  {
+    "Id": 13,
+    "SpecialityId": 5,
+    "SubjectId": 3,
+    "Mark": 85
+  },
+  {
+    "Id": 14,
+    "SpecialityId": 5,
+    "SubjectId": 7,
+    "Mark": 80
+  },
+  {
+    "Id": 15,
+    "SpecialityId": 5,
+    "SubjectId": 6,
+    "Mark": 75
+  },
+  {
+    "Id": 16,
+    "SpecialityId": 6,
+    "SubjectId": 7,
+    "Mark": 88
+  },
+  {
+    "Id": 17,
+    "SpecialityId": 6,
+    "SubjectId": 3,
+    "Mark": 82
+  },
+  {
+    "Id": 18,
+    "SpecialityId": 6,
+    "SubjectId": 1,
+    "Mark": 77
+  },
+  {
+    "Id": 19,
+    "SpecialityId": 7,
+    "SubjectId": 2,
+    "Mark": 72
+  },
+  {
+    "Id": 20,
+    "SpecialityId": 7,
+    "SubjectId": 1,
+    "Mark": 74
+  },
+  {
+    "Id": 21,
+    "SpecialityId": 7,
+    "SubjectId": 4,
+    "Mark": 70
+  },
+  {
+    "Id": 22,
+    "SpecialityId": 8,
+    "SubjectId": 2,
+    "Mark": 73
+  },
+  {
+    "Id": 23,
+    "SpecialityId": 8,
+    "SubjectId": 1,
+    "Mark": 75
+  },
+  {
+    "Id": 24,
+    "SpecialityId": 8,
+    "SubjectId": 4,
+    "Mark": 71
+  },
+  {
+    "Id": 25,
+    "SpecialityId": 9,
+    "SubjectId": 4,
+    "Mark": 85
+  },
+  {
+    "Id": 26,
+    "SpecialityId": 9,
+    "SubjectId": 2,
+    "Mark": 80
+  },
+  {
+    "Id": 27,
+    "SpecialityId": 9,
+    "SubjectId": 5,
+    "Mark": 75
+  },
+  {
+    "Id": 28,
+    "SpecialityId": 10,
+    "SubjectId": 3,
+    "Mark": 90
+  },
+  {
+    "Id": 29,
+    "SpecialityId": 10,
+    "SubjectId": 7,
+    "Mark": 88
+  },
+  {
+    "Id": 30,
+    "SpecialityId": 10,
+    "SubjectId": 6,
+    "Mark": 85
+  },
+  {
+    "Id": 31,
+    "SpecialityId": 11,
+    "SubjectId": 2,
+    "Mark": 70
+  },
+  {
+    "Id": 32,
+    "SpecialityId": 11,
+    "SubjectId": 5,
+    "Mark": 68
+  },
+  {
+    "Id": 33,
+    "SpecialityId": 11,
+    "SubjectId": 4,
+    "Mark": 65
+  },
+  {
+    "Id": 34,
+    "SpecialityId": 12,
+    "SubjectId": 2,
+    "Mark": 72
+  },
+  {
+    "Id": 35,
+    "SpecialityId": 12,
+    "SubjectId": 5,
+    "Mark": 70
+  },
+  {
+    "Id": 36,
+    "SpecialityId": 12,
+    "SubjectId": 4,
+    "Mark": 67
+  },
+  {
+    "Id": 37,
+    "SpecialityId": 13,
+    "SubjectId": 4,
+    "Mark": 78
+  },
+  {
+    "Id": 38,
+    "SpecialityId": 13,
+    "SubjectId": 2,
+    "Mark": 75
+  },
+  {
+    "Id": 39,
+    "SpecialityId": 13,
+    "SubjectId": 5,
+    "Mark": 72
+  },
+  {
+    "Id": 40,
+    "SpecialityId": 14,
+    "SubjectId": 4,
+    "Mark": 80
+  },
+  {
+    "Id": 41,
+    "SpecialityId": 14,
+    "SubjectId": 2,
+    "Mark": 77
+  },
+  {
+    "Id": 42,
+    "SpecialityId": 14,
+    "SubjectId": 5,
+    "Mark": 74
+  },
+  {
+    "Id": 43,
+    "SpecialityId": 15,
+    "SubjectId": 1,
+    "Mark": 85
+  },
+  {
+    "Id": 44,
+    "SpecialityId": 15,
+    "SubjectId": 6,
+    "Mark": 82
+  },
+  {
+    "Id": 45,
+    "SpecialityId": 15,
+    "SubjectId": 2,
+    "Mark": 78
+  },
+  {
+    "Id": 46,
+    "SpecialityId": 16,
+    "SubjectId": 1,
+    "Mark": 87
+  },
+  {
+    "Id": 47,
+    "SpecialityId": 16,
+    "SubjectId": 6,
+    "Mark": 83
+  },
+  {
+    "Id": 48,
+    "SpecialityId": 16,
+    "SubjectId": 2,
+    "Mark": 79
+  }
+]

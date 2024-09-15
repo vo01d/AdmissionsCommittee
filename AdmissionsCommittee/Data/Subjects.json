@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "Name": "Math"
+  },
+  {
+    "Id": 2,
+    "Name": "English"
+  },
+  {
+    "Id": 3,
+    "Name": "Biology"
+  },
+  {
+    "Id": 4,
+    "Name": "History"
+  },
+  {
+    "Id": 5,
+    "Name": "Geography"
+  },
+  {
+    "Id": 6,
+    "Name": "Physics"
+  },
+  {
+    "Id": 7,
+    "Name": "Chemistry"
+  }
+]

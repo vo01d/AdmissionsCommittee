@@ -1,16 +1,19 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
+using AdmissionsCommittee.DataAccessLayer;
 using AdmissionsCommittee.PresentationLayer.Commands;
 using AdmissionsCommittee.PresentationLayer.Queries;
 using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer {
-    class App { 
-        private readonly QueryInvoker _queryInvoker;
-        private readonly IApplicantsQueryHandler _queryHandler; 
+    class App {
+        private QueryInvoker _queryInvoker;
+        private IApplicantDB _applicantDB;
+        private IApplicantsQueryHandler _queryHandler;
 
-        public App(QueryInvoker queryInvoker, IApplicantsQueryHandler queryHandler) {
-            _queryInvoker = queryInvoker;
-            _queryHandler = queryHandler;
+        public App() {
+            _queryInvoker = new QueryInvoker();
+            _applicantDB = new ManualApplicantsDB();
+            _queryHandler = new ApplicantsDBQueryHandler(_applicantDB);
             SetCommands();
         }
 

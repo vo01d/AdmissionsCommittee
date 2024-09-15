@@ -1,0 +1,194 @@
+[
+  {
+    "Id": 1,
+    "ApplicationDate": "2024-08-01",
+    "ApplicantId": 1,
+    "SpecialityId": 1
+  },
+  {
+    "Id": 2,
+    "ApplicationDate": "2024-08-01",
+    "ApplicantId": 1,
+    "SpecialityId": 2
+  },
+  {
+    "Id": 3,
+    "ApplicationDate": "2024-08-02",
+    "ApplicantId": 2,
+    "SpecialityId": 3
+  },
+  {
+    "Id": 4,
+    "ApplicationDate": "2024-08-02",
+    "ApplicantId": 2,
+    "SpecialityId": 4
+  },
+  {
+    "Id": 5,
+    "ApplicationDate": "2024-08-03",
+    "ApplicantId": 3,
+    "SpecialityId": 5
+  },
+  {
+    "Id": 6,
+    "ApplicationDate": "2024-08-03",
+    "ApplicantId": 3,
+    "SpecialityId": 6
+  },
+  {
+    "Id": 7,
+    "ApplicationDate": "2024-08-04",
+    "ApplicantId": 4,
+    "SpecialityId": 7
+  },
+  {
+    "Id": 8,
+    "ApplicationDate": "2024-08-04",
+    "ApplicantId": 4,
+    "SpecialityId": 8
+  },
+  {
+    "Id": 9,
+    "ApplicationDate": "2024-08-05",
+    "ApplicantId": 5,
+    "SpecialityId": 9
+  },
+  {
+    "Id": 10,
+    "ApplicationDate": "2024-08-05",
+    "ApplicantId": 5,
+    "SpecialityId": 10
+  },
+  {
+    "Id": 11,
+    "ApplicationDate": "2024-08-06",
+    "ApplicantId": 6,
+    "SpecialityId": 11
+  },
+  {
+    "Id": 12,
+    "ApplicationDate": "2024-08-06",
+    "ApplicantId": 6,
+    "SpecialityId": 12
+  },
+  {
+    "Id": 13,
+    "ApplicationDate": "2024-08-07",
+    "ApplicantId": 7,
+    "SpecialityId": 13
+  },
+  {
+    "Id": 14,
+    "ApplicationDate": "2024-08-07",
+    "ApplicantId": 7,
+    "SpecialityId": 14
+  },
+  {
+    "Id": 15,
+    "ApplicationDate": "2024-08-08",
+    "ApplicantId": 8,
+    "SpecialityId": 15
+  },
+  {
+    "Id": 16,
+    "ApplicationDate": "2024-08-08",
+    "ApplicantId": 8,
+    "SpecialityId": 16
+  },
+  {
+    "Id": 17,
+    "ApplicationDate": "2024-08-09",
+    "ApplicantId": 9,
+    "SpecialityId": 1
+  },
+  {
+    "Id": 18,
+    "ApplicationDate": "2024-08-09",
+    "ApplicantId": 9,
+    "SpecialityId": 3
+  },
+  {
+    "Id": 19,
+    "ApplicationDate": "2024-08-10",
+    "ApplicantId": 10,
+    "SpecialityId": 5
+  },
+  {
+    "Id": 20,
+    "ApplicationDate": "2024-08-10",
+    "ApplicantId": 10,
+    "SpecialityId": 7
+  },
+  {
+    "Id": 21,
+    "ApplicationDate": "2024-08-11",
+    "ApplicantId": 1,
+    "SpecialityId": 8
+  },
+  {
+    "Id": 22,
+    "ApplicationDate": "2024-08-11",
+    "ApplicantId": 1,
+    "SpecialityId": 9
+  },
+  {
+    "Id": 23,
+    "ApplicationDate": "2024-08-12",
+    "ApplicantId": 2,
+    "SpecialityId": 11
+  },
+  {
+    "Id": 24,
+    "ApplicationDate": "2024-08-12",
+    "ApplicantId": 2,
+    "SpecialityId": 12
+  },
+  {
+    "Id": 25,
+    "ApplicationDate": "2024-08-13",
+    "ApplicantId": 3,
+    "SpecialityId": 13
+  },
+  {
+    "Id": 26,
+    "ApplicationDate": "2024-08-13",
+    "ApplicantId": 3,
+    "SpecialityId": 15
+  },
+  {
+    "Id": 27,
+    "ApplicationDate": "2024-08-14",
+    "ApplicantId": 4,
+    "SpecialityId": 16
+  },
+  {
+    "Id": 28,
+    "ApplicationDate": "2024-08-14",
+    "ApplicantId": 4,
+    "SpecialityId": 2
+  },
+  {
+    "Id": 29,
+    "ApplicationDate": "2024-08-15",
+    "ApplicantId": 5,
+    "SpecialityId": 4
+  },
+  {
+    "Id": 30,
+    "ApplicationDate": "2024-08-15",
+    "ApplicantId": 5,
+    "SpecialityId": 6
+  },
+  {
+    "Id": 31,
+    "ApplicationDate": "2024-08-16",
+    "ApplicantId": 6,
+    "SpecialityId": 7
+  },
+  {
+    "Id": 32,
+    "ApplicationDate": "2024-08-16",
+    "ApplicantId": 6,
+    "SpecialityId": 1
+  }
+]

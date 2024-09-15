@@ -1,0 +1,242 @@
+[
+  {
+    "Id": 1,
+    "ApplicantId": 1,
+    "SubjectId": 1,
+    "Mark": 85
+  },
+  {
+    "Id": 2,
+    "ApplicantId": 1,
+    "SubjectId": 2,
+    "Mark": 79
+  },
+  {
+    "Id": 3,
+    "ApplicantId": 1,
+    "SubjectId": 3,
+    "Mark": 88
+  },
+  {
+    "Id": 4,
+    "ApplicantId": 1,
+    "SubjectId": 4,
+    "Mark": 75
+  },
+  {
+    "Id": 5,
+    "ApplicantId": 2,
+    "SubjectId": 1,
+    "Mark": 91
+  },
+  {
+    "Id": 6,
+    "ApplicantId": 2,
+    "SubjectId": 6,
+    "Mark": 86
+  },
+  {
+    "Id": 7,
+    "ApplicantId": 2,
+    "SubjectId": 7,
+    "Mark": 83
+  },
+  {
+    "Id": 8,
+    "ApplicantId": 2,
+    "SubjectId": 3,
+    "Mark": 88
+  },
+  {
+    "Id": 9,
+    "ApplicantId": 3,
+    "SubjectId": 4,
+    "Mark": 80
+  },
+  {
+    "Id": 10,
+    "ApplicantId": 3,
+    "SubjectId": 5,
+    "Mark": 75
+  },
+  {
+    "Id": 11,
+    "ApplicantId": 3,
+    "SubjectId": 2,
+    "Mark": 78
+  },
+  {
+    "Id": 12,
+    "ApplicantId": 3,
+    "SubjectId": 7,
+    "Mark": 82
+  },
+  {
+    "Id": 13,
+    "ApplicantId": 4,
+    "SubjectId": 3,
+    "Mark": 88
+  },
+  {
+    "Id": 14,
+    "ApplicantId": 4,
+    "SubjectId": 6,
+    "Mark": 81
+  },
+  {
+    "Id": 15,
+    "ApplicantId": 4,
+    "SubjectId": 7,
+    "Mark": 84
+  },
+  {
+    "Id": 16,
+    "ApplicantId": 4,
+    "SubjectId": 1,
+    "Mark": 92
+  },
+  {
+    "Id": 17,
+    "ApplicantId": 5,
+    "SubjectId": 5,
+    "Mark": 72
+  },
+  {
+    "Id": 18,
+    "ApplicantId": 5,
+    "SubjectId": 2,
+    "Mark": 77
+  },
+  {
+    "Id": 19,
+    "ApplicantId": 5,
+    "SubjectId": 4,
+    "Mark": 82
+  },
+  {
+    "Id": 20,
+    "ApplicantId": 5,
+    "SubjectId": 3,
+    "Mark": 79
+  },
+  {
+    "Id": 21,
+    "ApplicantId": 6,
+    "SubjectId": 1,
+    "Mark": 86
+  },
+  {
+    "Id": 22,
+    "ApplicantId": 6,
+    "SubjectId": 6,
+    "Mark": 80
+  },
+  {
+    "Id": 23,
+    "ApplicantId": 6,
+    "SubjectId": 7,
+    "Mark": 83
+  },
+  {
+    "Id": 24,
+    "ApplicantId": 6,
+    "SubjectId": 3,
+    "Mark": 85
+  },
+  {
+    "Id": 25,
+    "ApplicantId": 7,
+    "SubjectId": 2,
+    "Mark": 78
+  },
+  {
+    "Id": 26,
+    "ApplicantId": 7,
+    "SubjectId": 4,
+    "Mark": 80
+  },
+  {
+    "Id": 27,
+    "ApplicantId": 7,
+    "SubjectId": 5,
+    "Mark": 75
+  },
+  {
+    "Id": 28,
+    "ApplicantId": 7,
+    "SubjectId": 1,
+    "Mark": 88
+  },
+  {
+    "Id": 29,
+    "ApplicantId": 8,
+    "SubjectId": 3,
+    "Mark": 82
+  },
+  {
+    "Id": 30,
+    "ApplicantId": 8,
+    "SubjectId": 7,
+    "Mark": 79
+  },
+  {
+    "Id": 31,
+    "ApplicantId": 8,
+    "SubjectId": 6,
+    "Mark": 84
+  },
+  {
+    "Id": 32,
+    "ApplicantId": 8,
+    "SubjectId": 2,
+    "Mark": 78
+  },
+  {
+    "Id": 33,
+    "ApplicantId": 9,
+    "SubjectId": 1,
+    "Mark": 89
+  },
+  {
+    "Id": 34,
+    "ApplicantId": 9,
+    "SubjectId": 5,
+    "Mark": 76
+  },
+  {
+    "Id": 35,
+    "ApplicantId": 9,
+    "SubjectId": 4,
+    "Mark": 82
+  },
+  {
+    "Id": 36,
+    "ApplicantId": 9,
+    "SubjectId": 3,
+    "Mark": 87
+  },
+  {
+    "Id": 37,
+    "ApplicantId": 10,
+    "SubjectId": 2,
+    "Mark": 80
+  },
+  {
+    "Id": 38,
+    "ApplicantId": 10,
+    "SubjectId": 7,
+    "Mark": 86
+  },
+  {
+    "Id": 39,
+    "ApplicantId": 10,
+    "SubjectId": 6,
+    "Mark": 81
+  },
+  {
+    "Id": 40,
+    "ApplicantId": 10,
+    "SubjectId": 1,
+    "Mark": 88
+  }
+]
