@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "LastName": "Donnelly",
+    "FirstName": "Hanna",
+    "MiddleName": "Jules",
+    "Birthday": "2001-04-12",
+    "PhoneNumber": "+380313543072"
+  },
+  {
+    "Id": 2,
+    "LastName": "Leffler",
+    "FirstName": "Heath",
+    "MiddleName": "Kai",
+    "Birthday": "1950-08-26",
+    "PhoneNumber": "+380493641018"
+  },
+  {
+    "Id": 3,
+    "LastName": "Schulist",
+    "FirstName": "Alysa",
+    "MiddleName": "Greer",
+    "Birthday": "1992-01-13",
+    "PhoneNumber": "+380592935603"
+  },
+  {
+    "Id": 4,
+    "LastName": "Bayer",
+    "FirstName": "Janessa",
+    "MiddleName": "Addison",
+    "Birthday": "1972-10-22",
+    "PhoneNumber": "+380681864700"
+  },
+  {
+    "Id": 5,
+    "LastName": "Nolan",
+    "FirstName": "Makayla",
+    "MiddleName": "Logan",
+    "Birthday": "1946-03-18",
+    "PhoneNumber": "+380116977701"
+  },
+  {
+    "Id": 6,
+    "LastName": "Dooley",
+    "FirstName": "Nikko",
+    "MiddleName": "Alex",
+    "Birthday": "1987-01-07",
+    "PhoneNumber": "+380912756130"
+  },
+  {
+    "Id": 7,
+    "LastName": "Hagenes",
+    "FirstName": "Samara",
+    "MiddleName": "Bailey",
+    "Birthday": "1951-12-13",
+    "PhoneNumber": "+380684676219"
+  },
+  {
+    "Id": 8,
+    "LastName": "Roberts",
+    "FirstName": "Annabelle",
+    "MiddleName": "Reese",
+    "Birthday": "1944-04-14",
+    "PhoneNumber": "+380699873156"
+  },
+  {
+    "Id": 9,
+    "LastName": "Skiles",
+    "FirstName": "Cassie",
+    "MiddleName": "Jaden",
+    "Birthday": "1981-05-08",
+    "PhoneNumber": "+380176601683"
+  },
+  {
+    "Id": 10,
+    "LastName": "Treutel",
+    "FirstName": "Lucas",
+    "MiddleName": "Jordan",
+    "Birthday": "1965-08-14",
+    "PhoneNumber": "+380392755727"
+  }
+]

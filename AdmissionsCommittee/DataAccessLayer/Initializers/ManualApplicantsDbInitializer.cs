@@ -1,25 +1,9 @@
 ﻿using AdmissionsCommittee.DataAccessLayer.Entities;
 
-namespace AdmissionsCommittee.DataAccessLayer { 
-    class ManualApplicantsDB : IApplicantDB {
-        private readonly List<Applicant> _applicants;
-        private readonly List<Application> _applications;
-        private readonly List<ExamResult> _examResults;
-        private readonly List<Faculty> _faculties;
-        private readonly List<PassMark> _passMarks;
-        private readonly List<Speciality> _specialities;
-        private readonly List<Subject> _subjects;
-
-        public IEnumerable<Applicant> Applicants => _applicants;
-        public IEnumerable<Application> Applications => _applications;
-        public IEnumerable<ExamResult> ExamResults => _examResults;
-        public IEnumerable<Faculty> Faculties => _faculties;
-        public IEnumerable<PassMark> PassMarks => _passMarks;
-        public IEnumerable<Speciality> Specialities => _specialities;
-        public IEnumerable<Subject> Subjects => _subjects;
-
-        public ManualApplicantsDB() {
-            _applicants = new List<Applicant> {
+namespace AdmissionsCommittee.DataAccessLayer.Initializers {
+    class ManualApplicantsDbInitializer : IDbInitializer<ApplicantsDb> {
+        public void Initialize(ApplicantsDb applicantsDB) {
+            applicantsDB.Applicants = new List<Applicant> {
                 new Applicant(id: 1, lastName: "Donnelly", firstName: "Hanna", middleName: "Jules", birthday: new DateOnly(2001, 4, 12), phoneNumber: "+380313543072"),
                 new Applicant(id: 2, lastName: "Leffler", firstName: "Heath", middleName: "Kai", birthday: new DateOnly(1950, 8, 26), phoneNumber: "+380493641018"),
                 new Applicant(id: 3, lastName: "Schulist", firstName: "Alysa", middleName: "Greer", birthday: new DateOnly(1992, 1, 13), phoneNumber: "+380592935603"),
@@ -31,7 +15,7 @@ namespace AdmissionsCommittee.DataAccessLayer {
                 new Applicant(id: 9, lastName: "Skiles", firstName: "Cassie", middleName: "Jaden", birthday: new DateOnly(1981, 5, 8), phoneNumber: "+380176601683"),
                 new Applicant(id: 10, lastName: "Treutel", firstName: "Lucas", middleName: "Jordan", birthday: new DateOnly(1965, 8, 14), phoneNumber: "+380392755727")
             };
-            _applications = new List<Application> {
+            applicantsDB.Applications = new List<Application> {
                 new Application(id: 1, applicationDate: new DateOnly(2024, 8, 1), applicantId: 1, specialityId: 1),
                 new Application(id: 2, applicationDate: new DateOnly(2024, 8, 1), applicantId: 1, specialityId: 2),
                 new Application(id: 3, applicationDate: new DateOnly(2024, 8, 2), applicantId: 2, specialityId: 3),
@@ -65,7 +49,7 @@ namespace AdmissionsCommittee.DataAccessLayer {
                 new Application(id: 31, applicationDate: new DateOnly(2024, 8, 16), applicantId: 6, specialityId: 7),
                 new Application(id: 32, applicationDate: new DateOnly(2024, 8, 16), applicantId: 6, specialityId: 1)
             };
-            _examResults = new List<ExamResult> {
+            applicantsDB.ExamResults = new List<ExamResult> {
                 new ExamResult(id: 1, applicantId: 1, subjectId: 1, mark: 85),
                 new ExamResult(id: 2, applicantId: 1, subjectId: 2, mark: 79),
                 new ExamResult(id: 3, applicantId: 1, subjectId: 3, mark: 88),
@@ -107,7 +91,7 @@ namespace AdmissionsCommittee.DataAccessLayer {
                 new ExamResult(id: 39, applicantId: 10, subjectId: 6, mark: 81),
                 new ExamResult(id: 40, applicantId: 10, subjectId: 1, mark: 88)
             };
-            _faculties = new List<Faculty> {
+            applicantsDB.Faculties = new List<Faculty> {
                 new Faculty(id: 1, name: "Engineering"),
                 new Faculty(id: 2, name: "Arts"),
                 new Faculty(id: 3, name: "Sciences"),
@@ -118,7 +102,7 @@ namespace AdmissionsCommittee.DataAccessLayer {
                 new Faculty(id: 8, name: "Social Sciences"),
                 new Faculty(id: 9, name: "Computer Science")
             };
-            _passMarks = new List<PassMark> {
+            applicantsDB.PassMarks = new List<PassMark> {
                 new PassMark(id: 1, specialityId: 1, subjectId: 1, mark: 75),
                 new PassMark(id: 2, specialityId: 1, subjectId: 6, mark: 70),
                 new PassMark(id: 3, specialityId: 1, subjectId: 7, mark: 65),
@@ -168,7 +152,7 @@ namespace AdmissionsCommittee.DataAccessLayer {
                 new PassMark(id: 47, specialityId: 16, subjectId: 6, mark: 83),
                 new PassMark(id: 48, specialityId: 16, subjectId: 2, mark: 79)
             };
-            _specialities = new List<Speciality> {
+            applicantsDB.Specialities = new List<Speciality> {
                 new Speciality(id: 1, number: 101, name: "Mechanical Engineering", facultyId: 1),
                 new Speciality(id: 2, number: 102, name: "Civil Engineering", facultyId: 1),
                 new Speciality(id: 3, number: 201, name: "English Literature", facultyId: 2),
@@ -186,7 +170,7 @@ namespace AdmissionsCommittee.DataAccessLayer {
                 new Speciality(id: 15, number: 901, name: "Software Engineering", facultyId: 9),
                 new Speciality(id: 16, number: 902, name: "Data Science", facultyId: 9)
             };
-            _subjects = new List<Subject> {
+            applicantsDB.Subjects = new List<Subject> {
                 new Subject(id: 1, name: "Math"),
                 new Subject(id: 2, name: "English"),
                 new Subject(id: 3, name: "Biology"),

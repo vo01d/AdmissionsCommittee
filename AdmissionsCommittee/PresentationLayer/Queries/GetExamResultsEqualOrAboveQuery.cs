@@ -28,7 +28,7 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
                 string input = Console.ReadLine() ?? throw new ArgumentNullException();
 
                 try {
-                    int lowerBound = InputValidator.ValidateInt32InRange(input, MinMark, MaxMark);
+                    int lowerBound = InputValidationHelper.ValidateInt32InRange(input, MinMark, MaxMark);
                     return lowerBound;
                 }
                 catch (FormatException) {

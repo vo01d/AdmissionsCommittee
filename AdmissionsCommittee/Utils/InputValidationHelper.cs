@@ -1,5 +1,5 @@
 ﻿namespace AdmissionsCommittee.Utils {
-    static class InputValidator {
+    static class InputValidationHelper {
         public static int ValidateInt32(string input) {
             return int.Parse(input);
         }

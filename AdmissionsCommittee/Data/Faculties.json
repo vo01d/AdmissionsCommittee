@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Name": "Engineering"
+  },
+  {
+    "Id": 2,
+    "Name": "Arts"
+  },
+  {
+    "Id": 3,
+    "Name": "Sciences"
+  },
+  {
+    "Id": 4,
+    "Name": "Business"
+  },
+  {
+    "Id": 5,
+    "Name": "Law"
+  },
+  {
+    "Id": 6,
+    "Name": "Medicine"
+  },
+  {
+    "Id": 7,
+    "Name": "Education"
+  },
+  {
+    "Id": 8,
+    "Name": "Social Sciences"
+  },
+  {
+    "Id": 9,
+    "Name": "Computer Science"
+  }
+]

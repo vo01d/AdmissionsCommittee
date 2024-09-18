@@ -1,0 +1,98 @@
+[
+  {
+    "Id": 1,
+    "Number": 101,
+    "Name": "Mechanical Engineering",
+    "FacultyId": 1
+  },
+  {
+    "Id": 2,
+    "Number": 102,
+    "Name": "Civil Engineering",
+    "FacultyId": 1
+  },
+  {
+    "Id": 3,
+    "Number": 201,
+    "Name": "English Literature",
+    "FacultyId": 2
+  },
+  {
+    "Id": 4,
+    "Number": 202,
+    "Name": "History",
+    "FacultyId": 2
+  },
+  {
+    "Id": 5,
+    "Number": 301,
+    "Name": "Biology",
+    "FacultyId": 3
+  },
+  {
+    "Id": 6,
+    "Number": 302,
+    "Name": "Chemistry",
+    "FacultyId": 3
+  },
+  {
+    "Id": 7,
+    "Number": 401,
+    "Name": "Business Administration",
+    "FacultyId": 4
+  },
+  {
+    "Id": 8,
+    "Number": 402,
+    "Name": "Marketing",
+    "FacultyId": 4
+  },
+  {
+    "Id": 9,
+    "Number": 501,
+    "Name": "Law",
+    "FacultyId": 5
+  },
+  {
+    "Id": 10,
+    "Number": 601,
+    "Name": "Medicine",
+    "FacultyId": 6
+  },
+  {
+    "Id": 11,
+    "Number": 701,
+    "Name": "Elementary Education",
+    "FacultyId": 7
+  },
+  {
+    "Id": 12,
+    "Number": 702,
+    "Name": "Secondary Education",
+    "FacultyId": 7
+  },
+  {
+    "Id": 13,
+    "Number": 801,
+    "Name": "Psychology",
+    "FacultyId": 8
+  },
+  {
+    "Id": 14,
+    "Number": 802,
+    "Name": "Sociology",
+    "FacultyId": 8
+  },
+  {
+    "Id": 15,
+    "Number": 901,
+    "Name": "Software Engineering",
+    "FacultyId": 9
+  },
+  {
+    "Id": 16,
+    "Number": 902,
+    "Name": "Data Science",
+    "FacultyId": 9
+  }
+]
