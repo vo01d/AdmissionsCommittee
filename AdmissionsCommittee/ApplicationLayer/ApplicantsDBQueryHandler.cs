@@ -4,21 +4,21 @@ using AdmissionsCommittee.DataAccessLayer.Entities;
 
 namespace AdmissionsCommittee.ApplicationLayer {
     class ApplicantsDBQueryHandler : IApplicantsQueryHandler {
-        private readonly IApplicantDB _applicantsDB;
+        private readonly ApplicantsDb _applicantsDb;
 
-        public ApplicantsDBQueryHandler(IApplicantDB applicantDB) {
-            _applicantsDB = applicantDB;
+        public ApplicantsDBQueryHandler(ApplicantsDb applicantDb) {
+            _applicantsDb = applicantDb;
         }
 
         public IEnumerable<Applicant> GetApplicants() {
-            return _applicantsDB.Applicants;
+            return _applicantsDb.Applicants;
         }
 
         public IEnumerable<ApplicationView> GetApplications() {
-            return from application in _applicantsDB.Applications
-                   join applicant in _applicantsDB.Applicants on application.ApplicantId equals applicant.Id
-                   join speciality in _applicantsDB.Specialities on application.SpecialityId equals speciality.Id
-                   join faculty in _applicantsDB.Faculties on speciality.FacultyId equals faculty.Id
+            return from application in _applicantsDb.Applications
+                   join applicant in _applicantsDb.Applicants on application.ApplicantId equals applicant.Id
+                   join speciality in _applicantsDb.Specialities on application.SpecialityId equals speciality.Id
+                   join faculty in _applicantsDb.Faculties on speciality.FacultyId equals faculty.Id
                    select new ApplicationView {
                        ApplicationId = application.Id,
                        ApplicationDate = application.ApplicationDate,
@@ -32,9 +32,9 @@ namespace AdmissionsCommittee.ApplicationLayer {
         }
 
         public IEnumerable<ExamResultView> GetExamResults() {
-            return from examResult in _applicantsDB.ExamResults
-                   join applicant in _applicantsDB.Applicants on examResult.ApplicantId equals applicant.Id
-                   join subject in _applicantsDB.Subjects on examResult.SubjectId equals subject.Id
+            return from examResult in _applicantsDb.ExamResults
+                   join applicant in _applicantsDb.Applicants on examResult.ApplicantId equals applicant.Id
+                   join subject in _applicantsDb.Subjects on examResult.SubjectId equals subject.Id
                    select new ExamResultView {
                        ExamResultId = examResult.Id,
                        LastName = applicant.LastName,
@@ -46,14 +46,14 @@ namespace AdmissionsCommittee.ApplicationLayer {
         }
 
         public IEnumerable<Faculty> GetFaculties() {
-            return _applicantsDB.Faculties;
+            return _applicantsDb.Faculties;
         }
 
         public IEnumerable<PassMarkView> GetPassMarks() {
-            return from passMark in _applicantsDB.PassMarks
-                   join speciality in _applicantsDB.Specialities on passMark.SpecialityId equals speciality.Id
-                   join faculty in _applicantsDB.Faculties on speciality.FacultyId equals faculty.Id
-                   join subject in _applicantsDB.Subjects on passMark.SubjectId equals subject.Id
+            return from passMark in _applicantsDb.PassMarks
+                   join speciality in _applicantsDb.Specialities on passMark.SpecialityId equals speciality.Id
+                   join faculty in _applicantsDb.Faculties on speciality.FacultyId equals faculty.Id
+                   join subject in _applicantsDb.Subjects on passMark.SubjectId equals subject.Id
                    select new PassMarkView {
                        PassMarkId = passMark.Id,
                        SpecialityNumber = speciality.Number,
@@ -65,8 +65,8 @@ namespace AdmissionsCommittee.ApplicationLayer {
         }
 
         public IEnumerable<SpecialityView> GetSpecialities() {
-            return from speciality in _applicantsDB.Specialities
-                   join faculty in _applicantsDB.Faculties on speciality.FacultyId equals faculty.Id
+            return from speciality in _applicantsDb.Specialities
+                   join faculty in _applicantsDb.Faculties on speciality.FacultyId equals faculty.Id
                    select new SpecialityView {
                        SpecialityId = speciality.Id,
                        SpecialityNumber = speciality.Number,
@@ -76,11 +76,11 @@ namespace AdmissionsCommittee.ApplicationLayer {
         }
 
         public IEnumerable<Subject> GetSubjects() {
-            return _applicantsDB.Subjects;
+            return _applicantsDb.Subjects;
         }
 
         public IEnumerable<Applicant> GetApplicantsByFirstName(string firstName) {
-            return _applicantsDB.Applicants.Where(applicant => applicant.FirstName == firstName);
+            return _applicantsDb.Applicants.Where(applicant => applicant.FirstName == firstName);
         }
 
         public IEnumerable<ExamResultView> GetExamResultsEqualOrAbove(int lowerBound) {
@@ -98,8 +98,8 @@ namespace AdmissionsCommittee.ApplicationLayer {
 
         public IEnumerable<(int ApplicantId, string LastName, string FirstName, string MiddleName, double AverageExamMark)>
             GetAverageApplicantsExamMark() {
-            return from examResult in _applicantsDB.ExamResults
-                   join applicant in _applicantsDB.Applicants on examResult.ApplicantId equals applicant.Id
+            return from examResult in _applicantsDb.ExamResults
+                   join applicant in _applicantsDb.Applicants on examResult.ApplicantId equals applicant.Id
                    group examResult by new {
                        applicant.Id,
                        applicant.LastName,
@@ -132,9 +132,9 @@ namespace AdmissionsCommittee.ApplicationLayer {
         }
 
         public IEnumerable<(string FacultyName, int NumberOfApplicants)> GetNumberOfApplicantsInEachFaculty() {
-            return from application in _applicantsDB.Applications
-                   join speciality in _applicantsDB.Specialities on application.SpecialityId equals speciality.Id
-                   join faculty in _applicantsDB.Faculties on speciality.FacultyId equals faculty.Id
+            return from application in _applicantsDb.Applications
+                   join speciality in _applicantsDb.Specialities on application.SpecialityId equals speciality.Id
+                   join faculty in _applicantsDb.Faculties on speciality.FacultyId equals faculty.Id
                    group application by faculty.Name into facultyApplicationGroup
                    select (
                         FacultyName: facultyApplicationGroup.Key,
@@ -146,8 +146,8 @@ namespace AdmissionsCommittee.ApplicationLayer {
         }
 
         public IEnumerable<(string SubjectName, int PassCount)> GetSubjectsPassCount() {
-            return from examResult in _applicantsDB.ExamResults
-                   join subject in _applicantsDB.Subjects on examResult.SubjectId equals subject.Id
+            return from examResult in _applicantsDb.ExamResults
+                   join subject in _applicantsDb.Subjects on examResult.SubjectId equals subject.Id
                    group examResult by subject.Name into examResultGroupBySubject
                    select (
                         SubjectName: examResultGroupBySubject.Key,
@@ -159,8 +159,8 @@ namespace AdmissionsCommittee.ApplicationLayer {
         }
 
         public IEnumerable<(string SubjectName, int LowestExamMark)> GetSubjectsLowestExamMark() {
-            return from examResult in _applicantsDB.ExamResults
-                   join subject in _applicantsDB.Subjects on examResult.SubjectId equals subject.Id
+            return from examResult in _applicantsDb.ExamResults
+                   join subject in _applicantsDb.Subjects on examResult.SubjectId equals subject.Id
                    group examResult.Mark by subject.Name into examMarkGroupBySubject
                    select (
                         SubjectName: examMarkGroupBySubject.Key,

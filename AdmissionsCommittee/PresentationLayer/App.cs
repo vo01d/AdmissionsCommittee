@@ -1,43 +1,14 @@
-﻿using AdmissionsCommittee.ApplicationLayer;
-using AdmissionsCommittee.DataAccessLayer;
-using AdmissionsCommittee.PresentationLayer.Commands;
-using AdmissionsCommittee.PresentationLayer.Queries;
-using AdmissionsCommittee.Utils;
+﻿using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer {
     class App {
-        private QueryInvoker _queryInvoker;
-        private IApplicantDB _applicantDB;
-        private IApplicantsQueryHandler _queryHandler;
+        private readonly QueryInvoker _queryInvoker;
 
-        public App() {
-            _queryInvoker = new QueryInvoker();
-            _applicantDB = new ManualApplicantsDB();
-            _queryHandler = new ApplicantsDBQueryHandler(_applicantDB);
-            SetCommands();
+        public App(QueryInvoker queryInvoker) {
+            _queryInvoker = queryInvoker;
         }
 
-        private void SetCommands() {
-            _queryInvoker.SetCommand(new GetApplicantsQuery("Print information about applicants", _queryHandler));
-            _queryInvoker.SetCommand(new GetApplicationsQuery("Print information about applications", _queryHandler));
-            _queryInvoker.SetCommand(new GetExamResultsQuery("Print information about exam results", _queryHandler));
-            _queryInvoker.SetCommand(new GetFacultiesQuery("Print information about faculties", _queryHandler));
-            _queryInvoker.SetCommand(new GetPassMarksQuery("Print information about pass marks", _queryHandler));
-            _queryInvoker.SetCommand(new GetSpecialitiesQuery("Print information about specialities", _queryHandler));
-            _queryInvoker.SetCommand(new GetSubjectsQuery("Print information about subjects", _queryHandler));
-            _queryInvoker.SetCommand(new GetApplicantsByFirstNameQuery("Print information about applicants with specified first name",
-                _queryHandler));
-            _queryInvoker.SetCommand(new GetExamResultsEqualOrAboveQuery("Print information about applicants exam results that " +
-                "equal or greater than specified number", _queryHandler));
-            _queryInvoker.SetCommand(new GetAverageSubjectsExamMarkQuery("Print average exam mark for each subject", _queryHandler));
-            _queryInvoker.SetCommand(new GetAverageApplicantsExamMarkQuery("Print average exam mark for each applicant", _queryHandler));
-            _queryInvoker.SetCommand(new GetAverageSpecialitiesPassMarkQuery("Print average pass mark for each speciality", _queryHandler));
-            _queryInvoker.SetCommand(new GetNumberOfApplicantsInEachFacultyQuery("Print number of applicants in each faculty", _queryHandler));
-            _queryInvoker.SetCommand(new GetSubjectsPassCountQuery("Print pass count for each subject", _queryHandler));
-            _queryInvoker.SetCommand(new GetSubjectsLowestExamMarkQuery("Print the lowest exam mark for each subject", _queryHandler));
-        }
-
-        public void Start() {
+        public void StartExecution() {
             ConsoleOutputHelper.WriteQueriesMenu(_queryInvoker.Queries);
             Console.WriteLine();
 
@@ -47,7 +18,7 @@ namespace AdmissionsCommittee.PresentationLayer {
 
                 int queryNumber;
                 try {
-                    queryNumber = InputValidator.ValidateInt32InRange(userInput, 1, _queryInvoker.CommandsCount);
+                    queryNumber = InputValidationHelper.ValidateInt32InRange(userInput, 1, _queryInvoker.CommandsCount);
                 }
                 catch (FormatException) {
                     Console.WriteLine("Invalid input! Please enter a valid integer.");
