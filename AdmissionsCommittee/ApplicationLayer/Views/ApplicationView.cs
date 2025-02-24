@@ -1,5 +1,5 @@
 ﻿namespace AdmissionsCommittee.ApplicationLayer.Views {
-    class ApplicationView {
+    public class ApplicationView {
         public required int ApplicationId { get; init; }
         public required DateOnly ApplicationDate { get; init; }
         public required string Lastname { get; init; }

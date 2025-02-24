@@ -1,5 +1,5 @@
 ﻿namespace AdmissionsCommittee.DataAccessLayer.Initializers {
-    interface IDbInitializer<T> {
+    public interface IDbInitializer<in T> {
         void Initialize(T database);
     }
 }

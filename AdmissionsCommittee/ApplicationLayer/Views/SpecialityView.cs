@@ -1,5 +1,5 @@
 ﻿namespace AdmissionsCommittee.ApplicationLayer.Views {
-    class SpecialityView {
+    public class SpecialityView {
         public required int SpecialityId { get; init; }
         public required int SpecialityNumber { get; init; }
         public required string SpecialityName { get; init; }

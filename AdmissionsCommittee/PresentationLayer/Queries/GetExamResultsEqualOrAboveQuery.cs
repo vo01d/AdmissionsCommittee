@@ -2,10 +2,10 @@
 using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
-    class GetExamResultsEqualOrAboveQuery : ApplicantsQuery {
+    public class GetExamResultsEqualOrAboveQuery : ApplicantsQuery {
         private const int MinMark = 1;
         private const int MaxMark = 100;
-        public GetExamResultsEqualOrAboveQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
+        public GetExamResultsEqualOrAboveQuery(string name, IApplicantsQueryService queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
@@ -22,13 +22,13 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
             }
         }
 
-        private int GetValidLowerBound() {
+        private static int GetValidLowerBound() {
             while (true) {
                 Console.Write($"Enter lower bound mark in range from {MinMark} to {MaxMark}: ");
                 string input = Console.ReadLine() ?? throw new ArgumentNullException();
 
                 try {
-                    int lowerBound = InputValidationHelper.ValidateInt32InRange(input, MinMark, MaxMark);
+                    int lowerBound = ToInt32Parser.ParseInRange(input, MinMark, MaxMark);
                     return lowerBound;
                 }
                 catch (FormatException) {

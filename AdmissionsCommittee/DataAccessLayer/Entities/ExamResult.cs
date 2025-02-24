@@ -1,5 +1,5 @@
 ﻿namespace AdmissionsCommittee.DataAccessLayer.Entities {
-    class ExamResult {
+    public class ExamResult {
         public int Id { get; }
         public int ApplicantId { get; }
         public int SubjectId { get; }

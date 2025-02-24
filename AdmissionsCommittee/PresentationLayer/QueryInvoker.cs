@@ -1,15 +1,16 @@
 ﻿using AdmissionsCommittee.PresentationLayer.Commands;
 
 namespace AdmissionsCommittee.PresentationLayer {
-    class QueryInvoker {
-        public List<Query> Queries { get; } = new List<Query>();
+    public class QueryInvoker {
+        public List<Query> Queries { get; } = [];
         public int CommandsCount => Queries.Count; 
         
-        public void SetCommand(Query command) {
+        public QueryInvoker SetQuery(Query command) {
             Queries.Add(command);
+            return this;
         }
 
-        public void ExecuteCommand(int commandNumber) {
+        public void ExecuteQuery(int commandNumber) {
             Queries[commandNumber - 1].Execute();
         }
     }

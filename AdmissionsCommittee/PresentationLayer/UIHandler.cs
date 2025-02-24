@@ -1,14 +1,14 @@
 ﻿using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer {
-    class App {
+    public class UIHandler {
         private readonly QueryInvoker _queryInvoker;
 
-        public App(QueryInvoker queryInvoker) {
+        public UIHandler(QueryInvoker queryInvoker) {
             _queryInvoker = queryInvoker;
         }
 
-        public void StartExecution() {
+        public void Start() {
             ConsoleOutputHelper.WriteQueriesMenu(_queryInvoker.Queries);
             Console.WriteLine();
 
@@ -18,7 +18,7 @@ namespace AdmissionsCommittee.PresentationLayer {
 
                 int queryNumber;
                 try {
-                    queryNumber = InputValidationHelper.ValidateInt32InRange(userInput, 1, _queryInvoker.CommandsCount);
+                    queryNumber = ToInt32Parser.ParseInRange(userInput, 1, _queryInvoker.CommandsCount);
                 }
                 catch (FormatException) {
                     Console.WriteLine("Invalid input! Please enter a valid integer.");
@@ -29,7 +29,7 @@ namespace AdmissionsCommittee.PresentationLayer {
                     continue;
                 }
 
-                _queryInvoker.ExecuteCommand(queryNumber);
+                _queryInvoker.ExecuteQuery(queryNumber);
             }
         }
     }

@@ -1,5 +1,5 @@
 ﻿namespace AdmissionsCommittee.DataAccessLayer.Entities {
-    class PassMark {
+    public class PassMark {
         public int Id { get; }
         public int SpecialityId { get; }
         public int SubjectId { get; }

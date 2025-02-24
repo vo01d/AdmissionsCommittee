@@ -1,5 +1,5 @@
 ﻿namespace AdmissionsCommittee.ApplicationLayer.Views {
-    class PassMarkView {
+    public class PassMarkView {
         public required int PassMarkId { get; init; }
         public required int SpecialityNumber { get; init; }
         public required string SpecialityName { get; init; }

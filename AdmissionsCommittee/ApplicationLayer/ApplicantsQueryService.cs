@@ -3,10 +3,10 @@ using AdmissionsCommittee.DataAccessLayer;
 using AdmissionsCommittee.DataAccessLayer.Entities;
 
 namespace AdmissionsCommittee.ApplicationLayer {
-    class ApplicantsDBQueryHandler : IApplicantsQueryHandler {
+    public class ApplicantsQueryService : IApplicantsQueryService {
         private readonly ApplicantsDb _applicantsDb;
 
-        public ApplicantsDBQueryHandler(ApplicantsDb applicantDb) {
+        public ApplicantsQueryService(ApplicantsDb applicantDb) {
             _applicantsDb = applicantDb;
         }
 

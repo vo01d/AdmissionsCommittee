@@ -2,8 +2,8 @@
 using ConsoleTables;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
-    class GetSubjectsLowestExamMarkQuery : ApplicantsQuery {
-        public GetSubjectsLowestExamMarkQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
+    public class GetSubjectsLowestExamMarkQuery : ApplicantsQuery {
+        public GetSubjectsLowestExamMarkQuery(string name, IApplicantsQueryService queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
@@ -15,8 +15,8 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
 
                 var table = new ConsoleTable("Subject name", "Lowest exam mark");
                 table.Configure(tableOptions => tableOptions.EnableCount = false);
-                foreach (var subjectLowestExamMark in subjectsLowestExamMark) {
-                    table.AddRow(subjectLowestExamMark.SubjectName, subjectLowestExamMark.LowestExamMark);
+                foreach (var (SubjectName, LowestExamMark) in subjectsLowestExamMark) {
+                    table.AddRow(SubjectName, LowestExamMark);
                 }
                 table.Write();
             } else {

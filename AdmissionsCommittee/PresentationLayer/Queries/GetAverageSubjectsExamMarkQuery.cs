@@ -1,10 +1,9 @@
 ﻿using AdmissionsCommittee.ApplicationLayer;
-using AdmissionsCommittee.DataAccessLayer.Entities;
 using ConsoleTables;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
-    class GetAverageSubjectsExamMarkQuery : ApplicantsQuery {
-        public GetAverageSubjectsExamMarkQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
+    public class GetAverageSubjectsExamMarkQuery : ApplicantsQuery {
+        public GetAverageSubjectsExamMarkQuery(string name, IApplicantsQueryService queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
@@ -16,8 +15,8 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
 
                 var table = new ConsoleTable("Subject name", "Average exam mark"); // ???
                 table.Configure(tableOptions => tableOptions.EnableCount = false);
-                foreach (var averageSubjectExamMark in averageSubjectsExamMark) {
-                    table.AddRow(averageSubjectExamMark.SubjectName, averageSubjectExamMark.AverageExamMark);
+                foreach (var (SubjectName, AverageExamMark) in averageSubjectsExamMark) {
+                    table.AddRow(SubjectName, AverageExamMark);
                 }
                 table.Write();
             } else {

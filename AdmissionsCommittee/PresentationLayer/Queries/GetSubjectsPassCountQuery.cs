@@ -2,8 +2,8 @@
 using ConsoleTables;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
-    class GetSubjectsPassCountQuery : ApplicantsQuery {
-        public GetSubjectsPassCountQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
+    public class GetSubjectsPassCountQuery : ApplicantsQuery {
+        public GetSubjectsPassCountQuery(string name, IApplicantsQueryService queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
@@ -15,8 +15,8 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
 
                 var table = new ConsoleTable("Subject name", "Pass count");
                 table.Configure(tableOptions => tableOptions.EnableCount = false);
-                foreach (var subjectPassCount in subjectsPassCount) {
-                    table.AddRow(subjectPassCount.SubjectName, subjectPassCount.PassCount);
+                foreach (var (SubjectName, PassCount) in subjectsPassCount) {
+                    table.AddRow(SubjectName, PassCount);
                 }
                 table.Write();
             } else {

@@ -2,13 +2,13 @@
 using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
-    class GetApplicantsByFirstNameQuery : ApplicantsQuery {
-        public GetApplicantsByFirstNameQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
+    public class GetApplicantsByFirstNameQuery : ApplicantsQuery {
+        public GetApplicantsByFirstNameQuery(string name, IApplicantsQueryService queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
             Console.Write("Enter first name: ");
-            string firstName = Console.ReadLine() ?? throw new ArgumentNullException();
+            string firstName = Console.ReadLine() ?? throw new NullReferenceException("firstName");
 
             var applicants = _queryHandler.GetApplicantsByFirstName(firstName);
 

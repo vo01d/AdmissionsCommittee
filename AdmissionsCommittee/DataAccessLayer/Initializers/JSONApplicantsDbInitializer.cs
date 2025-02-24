@@ -2,12 +2,8 @@
 using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.DataAccessLayer.Initializers {
-    class JSONApplicantsDbInitializer : IDbInitializer<ApplicantsDb> {
-        private readonly string _dataFolderPath;
-
-        public JSONApplicantsDbInitializer(string dataFolderPath) {
-            _dataFolderPath = dataFolderPath;
-        }
+    public class JsonApplicantsDbInitializer : IDbInitializer<ApplicantsDb> {
+        private const string _dataFolderPath = "..\\..\\..\\Data\\";
 
         public void Initialize(ApplicantsDb applicantsDB) {
             applicantsDB.Applicants = FileOperationsHelper.ReadJSON<List<Applicant>>(Path.Combine(_dataFolderPath, "Applicants.json"));

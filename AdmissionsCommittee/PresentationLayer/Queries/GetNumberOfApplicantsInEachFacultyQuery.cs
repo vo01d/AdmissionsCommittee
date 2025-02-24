@@ -2,8 +2,8 @@
 using ConsoleTables;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
-    class GetNumberOfApplicantsInEachFacultyQuery : ApplicantsQuery {
-        public GetNumberOfApplicantsInEachFacultyQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
+    public class GetNumberOfApplicantsInEachFacultyQuery : ApplicantsQuery {
+        public GetNumberOfApplicantsInEachFacultyQuery(string name, IApplicantsQueryService queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {

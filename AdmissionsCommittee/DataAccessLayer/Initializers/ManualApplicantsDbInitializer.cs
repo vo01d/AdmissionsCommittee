@@ -1,7 +1,7 @@
 ﻿using AdmissionsCommittee.DataAccessLayer.Entities;
 
 namespace AdmissionsCommittee.DataAccessLayer.Initializers {
-    class ManualApplicantsDbInitializer : IDbInitializer<ApplicantsDb> {
+    public class ManualApplicantsDbInitializer : IDbInitializer<ApplicantsDb> {
         public void Initialize(ApplicantsDb applicantsDB) {
             applicantsDB.Applicants = new List<Applicant> {
                 new Applicant(id: 1, lastName: "Donnelly", firstName: "Hanna", middleName: "Jules", birthday: new DateOnly(2001, 4, 12), phoneNumber: "+380313543072"),

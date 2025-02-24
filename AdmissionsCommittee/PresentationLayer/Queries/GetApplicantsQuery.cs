@@ -4,8 +4,8 @@ using AdmissionsCommittee.Utils;
 using ConsoleTables;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
-    class GetApplicantsQuery : ApplicantsQuery {
-        public GetApplicantsQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
+    public class GetApplicantsQuery : ApplicantsQuery {
+        public GetApplicantsQuery(string name, IApplicantsQueryService queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
