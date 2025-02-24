@@ -4,36 +4,42 @@ using AdmissionsCommittee.DataAccessLayer.Initializers;
 using AdmissionsCommittee.PresentationLayer;
 using AdmissionsCommittee.PresentationLayer.Commands;
 using AdmissionsCommittee.PresentationLayer.Queries;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AdmissionsCommittee {
-    class Program {
+    public class Program {
         static void Main(string[] args) {
-            string dataFolderPath = "C:\\Users\\Asus\\Desktop\\All\\Learning\\Programing\\C#\\projects" +
-    "\\AdmissionsCommittee\\AdmissionsCommittee\\Data\\";
-            ApplicantsDb applicantsDB = new ApplicantsDb(new JSONApplicantsDbInitializer(dataFolderPath));
-            ApplicantsDBQueryHandler applicantsDBQueryHandler = new ApplicantsDBQueryHandler(applicantsDB);
+            IServiceCollection services = new ServiceCollection();
 
-            QueryInvoker queryInvoker = new QueryInvoker();
-            queryInvoker.SetCommand(new GetApplicantsQuery("Print information about applicants", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetApplicationsQuery("Print information about applications", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetExamResultsQuery("Print information about exam results", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetFacultiesQuery("Print information about faculties", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetPassMarksQuery("Print information about pass marks", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetSpecialitiesQuery("Print information about specialities", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetSubjectsQuery("Print information about subjects", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetApplicantsByFirstNameQuery("Print information about applicants with specified first name",
-                applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetExamResultsEqualOrAboveQuery("Print information about applicants exam results that " +
-                "equal or greater than specified number", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetAverageSubjectsExamMarkQuery("Print average exam mark for each subject", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetAverageApplicantsExamMarkQuery("Print average exam mark for each applicant", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetAverageSpecialitiesPassMarkQuery("Print average pass mark for each speciality", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetNumberOfApplicantsInEachFacultyQuery("Print number of applicants in each faculty", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetSubjectsPassCountQuery("Print pass count for each subject", applicantsDBQueryHandler));
-            queryInvoker.SetCommand(new GetSubjectsLowestExamMarkQuery("Print the lowest exam mark for each subject", applicantsDBQueryHandler));
+            services.AddSingleton<QueryInvoker>();
+            services.AddSingleton<IDbInitializer<ApplicantsDb>, JsonApplicantsDbInitializer>();
+            services.AddSingleton<ApplicantsDb>();
+            services.AddTransient<IApplicantsQueryService, ApplicantsQueryService>();
+            services.AddSingleton<UIHandler>();
 
-            App app = new App(queryInvoker);
-            app.StartExecution();
+            IServiceProvider serviceProvider = services.BuildServiceProvider();
+
+            IApplicantsQueryService applicantsDBQueryHandler = serviceProvider.GetRequiredService<IApplicantsQueryService>();
+
+            var queryInvoker = serviceProvider.GetRequiredService<QueryInvoker>()
+                .SetQuery(new GetApplicantsQuery("Print applicants", applicantsDBQueryHandler))
+                .SetQuery(new GetApplicationsQuery("Print applications", applicantsDBQueryHandler))
+                .SetQuery(new GetExamResultsQuery("Print exam results", applicantsDBQueryHandler))
+                .SetQuery(new GetFacultiesQuery("Print faculties", applicantsDBQueryHandler))
+                .SetQuery(new GetPassMarksQuery("Print pass marks", applicantsDBQueryHandler))
+                .SetQuery(new GetSpecialitiesQuery("Print specialities", applicantsDBQueryHandler))
+                .SetQuery(new GetSubjectsQuery("Print subjects", applicantsDBQueryHandler))
+                .SetQuery(new GetApplicantsByFirstNameQuery("Print applicants with specified first name", applicantsDBQueryHandler))
+                .SetQuery(new GetExamResultsEqualOrAboveQuery("Print exam results that equal or greater than specified number", applicantsDBQueryHandler))
+                .SetQuery(new GetAverageSubjectsExamMarkQuery("Print average exam mark for each subject", applicantsDBQueryHandler))
+                .SetQuery(new GetAverageApplicantsExamMarkQuery("Print average exam mark for each applicant", applicantsDBQueryHandler))
+                .SetQuery(new GetAverageSpecialitiesPassMarkQuery("Print average pass mark for each speciality", applicantsDBQueryHandler))
+                .SetQuery(new GetNumberOfApplicantsInEachFacultyQuery("Print number of applicants in each faculty", applicantsDBQueryHandler))
+                .SetQuery(new GetSubjectsPassCountQuery("Print pass count for each subject", applicantsDBQueryHandler))
+                .SetQuery(new GetSubjectsLowestExamMarkQuery("Print the lowest exam mark for each subject", applicantsDBQueryHandler));
+
+            var UIHandler = serviceProvider.GetRequiredService<UIHandler>();
+            UIHandler.Start();
         }
     }
 }

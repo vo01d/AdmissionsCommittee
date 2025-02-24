@@ -2,8 +2,8 @@
 using ConsoleTables;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
-    class GetAverageApplicantsExamMarkQuery : ApplicantsQuery {
-        public GetAverageApplicantsExamMarkQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
+    public class GetAverageApplicantsExamMarkQuery : ApplicantsQuery {
+        public GetAverageApplicantsExamMarkQuery(string name, IApplicantsQueryService queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {
@@ -15,9 +15,9 @@ namespace AdmissionsCommittee.PresentationLayer.Queries {
 
                 var table = new ConsoleTable("Applicant id", "Last name", "First name", "Middle name", "Average exam mark"); 
                 table.Configure(tableOptions => tableOptions.EnableCount = false);
-                foreach (var averageApplicantExamMark in averageApplicantsExamMark) {
-                    table.AddRow(averageApplicantExamMark.ApplicantId, averageApplicantExamMark.LastName, averageApplicantExamMark.FirstName, 
-                        averageApplicantExamMark.MiddleName, averageApplicantExamMark.AverageExamMark);
+                foreach (var (ApplicantId, LastName, FirstName, MiddleName, AverageExamMark) in averageApplicantsExamMark) {
+                    table.AddRow(ApplicantId, LastName, FirstName, 
+                        MiddleName, AverageExamMark);
                 }
                 table.Write();
             } else {

@@ -1,5 +1,5 @@
 ﻿namespace AdmissionsCommittee.DataAccessLayer.Entities {
-    class Applicant {
+    public class Applicant {
         public int Id { get; }
         public string LastName { get; }
         public string FirstName { get; }

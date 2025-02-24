@@ -2,10 +2,10 @@
 using AdmissionsCommittee.PresentationLayer.Commands;
 
 namespace AdmissionsCommittee.PresentationLayer.Queries {
-    abstract class ApplicantsQuery : Query {
-        protected readonly IApplicantsQueryHandler _queryHandler;
+    public abstract class ApplicantsQuery : Query {
+        protected readonly IApplicantsQueryService _queryHandler;
 
-        protected ApplicantsQuery(string name, IApplicantsQueryHandler queryHandler) : base(name) {
+        protected ApplicantsQuery(string name, IApplicantsQueryService queryHandler) : base(name) {
             _queryHandler = queryHandler;
         }
     }

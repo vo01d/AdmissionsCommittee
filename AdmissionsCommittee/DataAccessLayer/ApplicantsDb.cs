@@ -2,7 +2,7 @@
 using AdmissionsCommittee.DataAccessLayer.Initializers;
 
 namespace AdmissionsCommittee.DataAccessLayer {
-    class ApplicantsDb {
+    public class ApplicantsDb {
         public IEnumerable<Applicant> Applicants { get; set; } = [];
         public IEnumerable<Application> Applications { get; set; } = [];
         public IEnumerable<ExamResult> ExamResults { get; set; } = [];

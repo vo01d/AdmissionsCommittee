@@ -4,7 +4,7 @@ using AdmissionsCommittee.PresentationLayer.Commands;
 using ConsoleTables;
 
 namespace AdmissionsCommittee.Utils {
-    static class ConsoleOutputHelper {
+    public static class ConsoleOutputHelper {
         public static void WriteQueriesMenu(IEnumerable<Query> queries) {
             Console.WriteLine("Queries menu: ");
             foreach (var (query, index) in queries.Select((query, index) => (query, index))) {

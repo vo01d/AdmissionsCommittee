@@ -3,8 +3,8 @@ using AdmissionsCommittee.PresentationLayer.Queries;
 using AdmissionsCommittee.Utils;
 
 namespace AdmissionsCommittee.PresentationLayer.Commands {
-    class GetSubjectsQuery : ApplicantsQuery {
-        public GetSubjectsQuery(string name, IApplicantsQueryHandler queryHandler) : base(name, queryHandler) {
+    public class GetSubjectsQuery : ApplicantsQuery {
+        public GetSubjectsQuery(string name, IApplicantsQueryService queryHandler) : base(name, queryHandler) {
         }
 
         public override void Execute() {

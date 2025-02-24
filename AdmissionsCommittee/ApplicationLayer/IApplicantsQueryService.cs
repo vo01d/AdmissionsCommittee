@@ -2,7 +2,7 @@
 using AdmissionsCommittee.DataAccessLayer.Entities;
 
 namespace AdmissionsCommittee.ApplicationLayer {
-    interface IApplicantsQueryHandler {
+    public interface IApplicantsQueryService {
         IEnumerable<Applicant> GetApplicants();
         IEnumerable<ApplicationView> GetApplications();
         IEnumerable<ExamResultView> GetExamResults();
